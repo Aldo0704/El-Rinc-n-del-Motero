@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!------------------------------------------
+        Configuración basica del navegador
+    -------------------------------------------->
+    <meta charset="UTF-8">
+    <!-----------------------------
+    Configuración responsive para dispositivos móviles
+    --------------------------  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!----------------------------------------
+            SEO ( motor de busqueda)
+    ----------------------------------------->
+    <!-- Descripcion que aparecera en Google -->
+    <meta name="description"
+        content="El Rincón del Motero - Guía completa de motocicletas con comparativas, recomendaciones, modelos destacados y consejos legales. Encuentra tu próxima moto ideal con información real y experiencias de otros moteros." />
+    <!-- Palabras clave -->
+    <meta name="keywords"
+        content="motos, motocicletas, comparativas motos, modelos motos, consejos moteros, guía motocicletas, recomendaciones motos, disposiciones legales motos, experiencias moteros, bitácora motera" />
+    <!-- Informacion de los autores -->
+    <meta name="author" content="Tantavilca Aldo y Zenozain Edwin" />
+    <!-- Le dice a Google que lean el contenido de mi pagina y que siga mis enlaces -->
+    <meta name="robots" content="index, follow" />
+    <!-- Información adicional para motores de búsqueda -->
+    <meta name="language" content="Spanish" />
+    <meta name="geo.region" content="PE" />
+    <meta name="geo.placename" content="Perú" />
+    <!---------------------------------------
+        OPEN GRAPH PARA LAS REDES SOCIALES
+    ---------------------------------------->
+    <!-- Título optimizado para cuando se comparta en cualquier red social -->
+    <meta property="og:title" content="El Rincón del Motero - Tu Bitácora Motera Definitiva" />
+    <meta property="og:description"
+        content="Descubre comparativas honestas, modelos destacados y consejos prácticos para moteros. Conecta con la comunidad y vive cada kilómetro al máximo. ¡Tu próximo paso en dos ruedas empieza aquí!" />
+    <!-- El tipo de contenido -->
+    <meta property="og:type" content="website" />
+    <!-- URL de nuestra pagina web -->
+    <meta property="og:url" content="https://elrincondelMotero.com" />
+    <!-- Imagen que se mostrará cuando se comparta - debe ser llamativa y representar el mundo motero -->
+    <meta property="og:image" content="https://elrincondelMotero.com/assets/og-image-motos.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="El Rincón del Motero - Comunidad y guías de moticicletas" />
+    <!-- Informacion del sitio web -->
+    <meta property="og:site_name" content="El Rincón del Motero" />
+    <meta property="og:locale" content="es_PE" />
+    <!---------------------------------------    
+                Twitter Cards 
+    ---------------------------------------->
+    <!-- El tipo de tarjeta - imagen grande para mayor impacto visual -->
+    <meta name="twitter:card" content="summary_large_image ">
+    <!-- Titulo especifico para Twitter -->
+    <meta name="twitter:title" content="El Rincón del Motero - Guías y Comparativas de Motos">
+    <!-- Descripción optimizada para Twitter -->
+    <meta name="twitter:description"
+        content="Comparativas reales, consejos prácticos y experiencias de moteros. Encuentra tu próxima moto ideal. #Motos #Motocicletas #ComunidadMotera" />
+    <!-- Imagen para Twitter -->
+    <meta name="twitter:image" content="https://elrincondelMotero.com/assets/twitter-card-motos.jpg" />
+    <!---------------------------------------            
+            CANONICAL Y FAVICON
+    ---------------------------------------->
+    <!-- URL canonica para evitar contenido duplicado -->
+    <link rel="canonical" href="https://elrincondelMotero.com" />
+    <!-- Favicon -->
+    <link rel="icon" href="imagenes/Gemini_Generated_Image_pd6f9ypd6f9ypd6f.png" />
+    <!-- Precarga de conexiones para mejorar velocidad -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Oswald:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <title>El Rincón del motero</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <!-- Estructura con CSS GRID para movil -->
+    <div class="portfolio">
+        <!---------------------------------------
+            Menu con navefación responsive
+        ---------------------------------------->
+
+        <header class="header">
+            <div class="header_container">
+                <!-- Logo -->
+                <div class="header_logo">
+                    <a href="#inicio">
+                        <img src="imagenes/Logo.png" alt="Logo El Rincón del Motero">
+                    </a>
+                    <h3>El Rincón del Motero</h3>
+                    <input type="checkbox" id="menu-togle" class="header_menu-togle">
+                    <label for="menu-togle" class="header_menu-button">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </label>
+                    <!-- Navegación a la derecha -->
+                    <nav class="nav">
+                        <ul class="nav_list">
+                            <li class="nav_item">
+                                <a href="#inicio" class="nav_link nav_link--active">Inicio</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="#Modelos" class="nav_link">Modelos</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="#Recomendaciones" class="nav_link">Recomendaciones</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="#Legales" class="nav_link">Disposiciones Legales</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="#Experiencias" class="nav_link">Experiencias</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-------------------------------------- 
+            Contenido de nuestra pagina web 
+        ---------------------------------------->
+        <main class="main">
+            <!-- Hero -->
+            <section id="inicio" class="hero">
+                <div class="hero_container">
+                    <img src="imagenes/Foto de inicio.png" alt="">
+                    <h1>Velocidad y Espíritu: Tu Bitácora Motera Definitiva</h1>
+                    <p>
+                        Aquí, en 'El Rincón del Motero’, nos apasionan las motos como a ti. Si buscas datos reales sobre
+                        modelos, comparativas
+                        honestas o consejos prácticos para manejar con cabeza, ¡estás en el sitio correcto!. Además,
+                        conéctate con otros moteros
+                        y comparte esas historias de carretera que solo nosotros entendemos. Prepárate para vivir cada
+                        kilómetro al máximo.
+                    </p>
+                </div>
+            </section>
+            <section id="modelos" class="models">
+                <div class="models_container">
+                    <!-- Motos Deportivas -->
+                    <h1>Motos Deportivas:</h1>
+                    <div class="sports-motorcycles">
+                        <h2>Yamaha YZF-R6</h2>
+                        <img src="imagenes/YAMAHA YZF-R6.jpg" alt="">
+                        <ul class="model_list">
+                            <li>Cilindrada: 599 cc</li>
+                            <li>Motor: 4 cilindros en línea, DOHC, refrigerado por líquido</li>
+                            <li>Potencia: 118 hp @ 14,500 rpm</li>
+                            <li>Torque: 61.7 Nm @ 10,500 rpm</li>
+                            <li>Velocidades: 6 marchas</li>
+                            <li>Capacidad de tanque: 17 L</li>
+                        </ul>
+                        <p>
+                            Es una supersport icónica, con un desempeño de pista brutal y confiabilidad Yamaha. Perfecta
+                            si buscas adrenalina pura.
+                        </p>
+                    </div>
+                    <div class="sports-motorcycles">
+                        <h2>Kawasaki Ninja ZX-6R</h2>
+                        <img src="imagenes/Kawasaki Ninja ZX-6R.jpg" alt="">
+                        <ul>
+                            <li>Cilindrada: 636 cc</li>
+                            <li>Motor: 4 cilindros en línea, DOHC, refrigerado por líquido</li>
+                            <li>Potencia: 127 hp @ 13,500 rpm</li>
+                            <li>Torque: 70.8 Nm @ 11,000 rpm</li>
+                            <li>Velocidades: 6 marchas</li>
+                            <li>Capacidad de tanque: 17 L</li>
+                        </ul>
+                        <p>
+                            Tiene más torque que la R6, lo que la hace más versátil para ciudad y carretera. Además,
+                            incorpora asistencias
+                            electrónicas (ABS, modos de conducción).
+                        </p>
+                    </div>
+                    <!-- Motos de Trabajo -->
+                    <h1>Motos para el Trabajo</h1>
+                    <div class="work-motorcycle">
+                        <h2>Bajaj Boxer BM150</h2>
+                        <img src="imagenes/Boxer_BM_150_1.jpg" alt="">
+                        <ul>
+                            <li>Cilindrada: 144.8 cc</li>
+                            <li>Motor: 1 cilindro, SOHC, refrigerado por aire</li>
+                            <li>Potencia: 12 hp @ 7,500 rpm</li>
+                            <li>Torque: 12.26 Nm @ 5,000 rpms</li>
+                            <li>Velocidades: 4 marchas</li>
+                            <li>Capacidad de tanque: 11 Ls</li>
+                        </ul>
+                        <p>
+                            Es una moto de batalla: barata de mantener, con repuestos en todos lados y perfecta para
+                            delivery, mensajería o
+                            transporte diario.
+                        </p>
+                    </div>
+                    <div class="work-motorcycle">
+                        <h2>Honda CB125F</h2>
+                        <ul>
+                            <li>Cilindrada: 124.7 cc</li>
+                            <li>Motor: 1 cilindro, OHC, refrigerado por aire</li>
+                            <li>Potencia: 10.7 hp @ 7,500 rpm</li>
+                            <li>Torque: 10.2 Nm @ 6,000 rpm</li>
+                            <li>Velocidades: 5 marchas</li>
+                            <li>Capacidad de tanque: 11 L</li>
+                        </ul>
+                        <p>
+                            Es la moto más confiable para trabajo urbano. Consumo de combustible muy bajo, fácil de
+                            mantener y con la durabilidad
+                            Honda.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
