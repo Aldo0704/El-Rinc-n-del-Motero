@@ -86,33 +86,33 @@
             <div class="header__container">
                 <!-- Logo -->
                 <div class="header__logo">
-                    <a href="#inicio" class="header__logo-link">
-                        <img src="imagenes/Logo.png" alt="Logo El Rincón del Motero" class="header__logo-image">
+                    <a href="#inicio" class="header__link">
+                        <img src="imagenes/Logo.png" alt="Logo El Rincón del Motero" class="header__image">
                     </a>
                     <h3 class="header__title">El Rincón del Motero</h3>
-                    <input type="checkbox" id="menu-toggle" class="header__menu-toggle">
-                    <label for="menu-toggle" class="header__menu-button">
-                        <span class="header__menu-line"></span>
-                        <span class="header__menu-line"></span>
-                        <span class="header__menu-line"></span>
+                    <input type="checkbox" id="menu-toggle" class="header__toggle">
+                    <label for="menu-toggle" class="header__button">
+                        <span class="header__line"></span>
+                        <span class="header__line"></span>
+                        <span class="header__line"></span>
                     </label>
-                    <!-- Navegación a la derecha -->
-                    <nav class="nav">
-                        <ul class="nav__list">
-                            <li class="nav__item">
-                                <a href="#inicio" class="nav__link nav__link--active">Inicio</a>
+                    <!-- Navegación -->
+                    <nav class="header__nav">
+                        <ul class="header__list">
+                            <li class="header__item">
+                                <a href="#inicio" class="header__link header__link--active">Inicio</a>
                             </li>
-                            <li class="nav__item">
-                                <a href="#Modelos" class="nav__link">Modelos</a>
+                            <li class="header__item">
+                                <a href="#modelos" class="header__link">Modelos</a>
                             </li>
-                            <li class="nav__item">
-                                <a href="#Recomendaciones" class="nav__link">Recomendaciones</a>
+                            <li class="header__item">
+                                <a href="#recomendaciones" class="header__link">Recomendaciones</a>
                             </li>
-                            <li class="nav__item">
-                                <a href="#Legales" class="nav__link">Disposiciones Legales</a>
+                            <li class="header__item">
+                                <a href="#legales" class="header__link">Disposiciones Legales</a>
                             </li>
-                            <li class="nav__item">
-                                <a href="#Experiencias" class="nav__link">Experiencias</a>
+                            <li class="header__item">
+                                <a href="#experiencias" class="header__link">Experiencias</a>
                             </li>
                         </ul>
                     </nav>
@@ -138,20 +138,21 @@
                     </p>
                 </div>
             </section>
+            <!-- Modelos de Motos -->
             <section id="modelos" class="models">
                 <div class="models__container">
                     <!-- Motos Deportivas -->
-                    <h1 class="models__category-title">Motos Deportivas:</h1>
+                    <h1 class="models__title">Motos Deportivas:</h1>
                     <div class="motorcycle motorcycle--sports">
                         <h2 class="motorcycle__name">Yamaha YZF-R6</h2>
                         <img src="imagenes/YAMAHA YZF-R6.jpg" alt="Yamaha YZF-R6" class="motorcycle__image">
-                        <ul class="motorcycle__specs">
-                            <li class="motorcycle__spec">Cilindrada: 599 cc</li>
-                            <li class="motorcycle__spec">Motor: 4 cilindros en línea, DOHC, refrigerado por líquido</li>
-                            <li class="motorcycle__spec">Potencia: 118 hp @ 14,500 rpm</li>
-                            <li class="motorcycle__spec">Torque: 61.7 Nm @ 10,500 rpm</li>
-                            <li class="motorcycle__spec">Velocidades: 6 marchas</li>
-                            <li class="motorcycle__spec">Capacidad de tanque: 17 L</li>
+                        <ul class="motorcycle__list">
+                            <li class="motorcycle__item">Cilindrada: 599 cc</li>
+                            <li class="motorcycle__item">Motor: 4 cilindros en línea, DOHC, refrigerado por líquido</li>
+                            <li class="motorcycle__item">Potencia: 118 hp @ 14,500 rpm</li>
+                            <li class="motorcycle__item">Torque: 61.7 Nm @ 10,500 rpm</li>
+                            <li class="motorcycle__item">Velocidades: 6 marchas</li>
+                            <li class="motorcycle__item">Capacidad de tanque: 17 L</li>
                         </ul>
                         <p class="motorcycle__description">
                             Es una supersport icónica, con un desempeño de pista brutal y confiabilidad Yamaha. Perfecta
@@ -162,13 +163,13 @@
                         <h2 class="motorcycle__name">Kawasaki Ninja ZX-6R</h2>
                         <img src="imagenes/Kawasaki Ninja ZX-6R.jpg" alt="Kawasaki Ninja ZX-6R"
                             class="motorcycle__image">
-                        <ul class="motorcycle__specs">
-                            <li class="motorcycle__spec">Cilindrada: 636 cc</li>
-                            <li class="motorcycle__spec">Motor: 4 cilindros en línea, DOHC, refrigerado por líquido</li>
-                            <li class="motorcycle__spec">Potencia: 127 hp @ 13,500 rpm</li>
-                            <li class="motorcycle__spec">Torque: 70.8 Nm @ 11,000 rpm</li>
-                            <li class="motorcycle__spec">Velocidades: 6 marchas</li>
-                            <li class="motorcycle__spec">Capacidad de tanque: 17 L</li>
+                        <ul class="motorcycle__list">
+                            <li class="motorcycle__item">Cilindrada: 636 cc</li>
+                            <li class="motorcycle__item">Motor: 4 cilindros en línea, DOHC, refrigerado por líquido</li>
+                            <li class="motorcycle__item">Potencia: 127 hp @ 13,500 rpm</li>
+                            <li class="motorcycle__item">Torque: 70.8 Nm @ 11,000 rpm</li>
+                            <li class="motorcycle__item">Velocidades: 6 marchas</li>
+                            <li class="motorcycle__item">Capacidad de tanque: 17 L</li>
                         </ul>
                         <p class="motorcycle__description">
                             Tiene más torque que la R6, lo que la hace más versátil para ciudad y carretera. Además,
@@ -177,17 +178,17 @@
                         </p>
                     </div>
                     <!-- Motos de Trabajo -->
-                    <h1 class="models__category-title">Motos para el Trabajo</h1>
+                    <h1 class="models__title">Motos para el Trabajo</h1>
                     <div class="motorcycle motorcycle--work">
                         <h2 class="motorcycle__name">Bajaj Boxer BM150</h2>
                         <img src="imagenes/Boxer_BM_150_1.jpg" alt="Bajaj Boxer BM150" class="motorcycle__image">
-                        <ul class="motorcycle__specs">
-                            <li class="motorcycle__spec">Cilindrada: 144.8 cc</li>
-                            <li class="motorcycle__spec">Motor: 1 cilindro, SOHC, refrigerado por aire</li>
-                            <li class="motorcycle__spec">Potencia: 12 hp @ 7,500 rpm</li>
-                            <li class="motorcycle__spec">Torque: 12.26 Nm @ 5,000 rpms</li>
-                            <li class="motorcycle__spec">Velocidades: 4 marchas</li>
-                            <li class="motorcycle__spec">Capacidad de tanque: 11 Ls</li>
+                        <ul class="motorcycle__list">
+                            <li class="motorcycle__item">Cilindrada: 144.8 cc</li>
+                            <li class="motorcycle__item">Motor: 1 cilindro, SOHC, refrigerado por aire</li>
+                            <li class="motorcycle__item">Potencia: 12 hp @ 7,500 rpm</li>
+                            <li class="motorcycle__item">Torque: 12.26 Nm @ 5,000 rpms</li>
+                            <li class="motorcycle__item">Velocidades: 4 marchas</li>
+                            <li class="motorcycle__item">Capacidad de tanque: 11 Ls</li>
                         </ul>
                         <p class="motorcycle__description">
                             Es una moto de batalla: barata de mantener, con repuestos en todos lados y perfecta para
@@ -198,19 +199,87 @@
                     <div class="motorcycle motorcycle--work">
                         <h2 class="motorcycle__name">Honda CB125F</h2>
                         <img src="imagenes/Honda-CB125F-2026-9.jpg" alt="Honda CB125F" class="motorcycle__image">
-                        <ul class="motorcycle__specs">
-                            <li class="motorcycle__spec">Cilindrada: 124.7 cc</li>
-                            <li class="motorcycle__spec">Motor: 1 cilindro, OHC, refrigerado por aire</li>
-                            <li class="motorcycle__spec">Potencia: 10.7 hp @ 7,500 rpm</li>
-                            <li class="motorcycle__spec">Torque: 10.2 Nm @ 6,000 rpm</li>
-                            <li class="motorcycle__spec">Velocidades: 5 marchas</li>
-                            <li class="motorcycle__spec">Capacidad de tanque: 11 L</li>
+                        <ul class="motorcycle__list">
+                            <li class="motorcycle__item">Cilindrada: 124.7 cc</li>
+                            <li class="motorcycle__item">Motor: 1 cilindro, OHC, refrigerado por aire</li>
+                            <li class="motorcycle__item">Potencia: 10.7 hp @ 7,500 rpm</li>
+                            <li class="motorcycle__item">Torque: 10.2 Nm @ 6,000 rpm</li>
+                            <li class="motorcycle__item">Velocidades: 5 marchas</li>
+                            <li class="motorcycle__item">Capacidad de tanque: 11 L</li>
                         </ul>
                         <p class="motorcycle__description">
                             Es la moto más confiable para trabajo urbano. Consumo de combustible muy bajo, fácil de
                             mantener y con la durabilidad
                             Honda.
                         </p>
+                    </div>
+                </div>
+            </section>
+            <!-- Sección de Recomendaciones para Moteros -->
+            <section id="recomendaciones" class="recommendations">
+                <div class="recommendations__container">
+                    <h1 class="recommendations__title">Recomendaciones para Moteros</h1>
+                    <ul class="recommendations__list">
+                        <!-- Lista de recomendaciones prácticas para seguridad y buen uso -->
+                        <li class="recommendations__item">Usa siempre casco certificado y ropa adecuada (chaqueta,
+                            guantes, botas).</li>
+                        <li class="recommendations__item">Haz mantenimiento regular a tu motocicleta: frenos, llantas,
+                            luces y aceite.</li>
+                        <li class="recommendations__item">Respeta los límites de velocidad y señalización vial.</li>
+                        <li class="recommendations__item">Evita manejar con fatiga o bajo efectos de alcohol.</li>
+                        <li class="recommendations__item">Capacítate con cursos de manejo defensivo.</li>
+                    </ul>
+                </div>
+            </section>
+            <!-- Sección de Disposiciones Legales (Perú) -->
+            <section id="legales" class="legal">
+                <div class="legal__container">
+                    <h1 class="legal__title">Disposiciones Legales en Perú</h1>
+                    <!-- Descripción introductoria -->
+                    <p class="legal__description">
+                        En Perú, existen disposiciones específicas sobre el uso de motocicletas que buscan garantizar la
+                        seguridad
+                        vial y prevenir delitos:
+                    </p>
+                    <ul class="legal__list">
+                        <!-- Lista de normas legales vigentes en Perú -->
+                        <li class="legal__item">Uso obligatorio de casco certificado para conductor y pasajero.</li>
+                        <li class="legal__item">Uso de chaleco reflectante con número de placa en ciertas
+                            jurisdicciones.</li>
+                        <li class="legal__item">Prohibición de llevar más de un pasajero en zonas con alta incidencia
+                            delictiva.
+                        </li>
+                        <li class="legal__item">Restricciones en circulación en algunas vías o horarios.</li>
+                        <li class="legal__item">Matrícula visible y luces en buen estado.</li>
+                    </ul>
+                </div>
+            </section>
+            <!-- Sección de Experiencias de Moteros -->
+            <section id="experiencias" class="experiences">
+                <div class="experiences__container">
+                    <h1 class="experiences__title">Experiencias de Moteros</h1>
+                    <div class="experiences__grid">
+                        <!-- Testimonio 1 -->
+                        <div class="experiences__card">
+                            <h2 class="experiences__author">Carlos, Lima</h2>
+                            <p class="experiences__text">"Mi Bajaj Boxer me ha acompañado por más de 5 años. Económica,
+                                resistente y
+                                perfecta para mi trabajo diario como repartidor."</p>
+                        </div>
+                        <!-- Testimonio 2 -->
+                        <div class="experiences__card">
+                            <h2 class="experiences__author">Sandra, Arequipa</h2>
+                            <p class="experiences__text">"La Ninja ZX-6R es mi escape de los fines de semana. No hay
+                                nada como
+                                sentir la velocidad en la Panamericana Sur."</p>
+                        </div>
+                        <!-- Testimonio 3 -->
+                        <div class="experiences__card">
+                            <h2 class="experiences__author">Luis, Trujillo</h2>
+                            <p class="experiences__text">"Una caída me hizo valorar la importancia del equipo de
+                                protección. Ahora
+                                no salgo sin guantes ni chaqueta con protecciones."</p>
+                        </div>
                     </div>
                 </div>
             </section>
