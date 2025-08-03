@@ -86,37 +86,39 @@
             <div class="header__container">
                 <!-- Logo -->
                 <div class="header__logo">
-                    <a href="#inicio" class="header__link">
-                        <img src="imagenes/Logo.png" alt="Logo El Rincón del Motero" class="header__image">
+                    <a href="#inicio">
+                        <img src="imagenes/LOGO SIN FONDO.png" alt="El Rincón del Motero" />
                     </a>
-                    <h3 class="header__title">El Rincón del Motero</h3>
-                    <input type="checkbox" id="menu-toggle" class="header__toggle">
-                    <label for="menu-toggle" class="header__button">
-                        <span class="header__line"></span>
-                        <span class="header__line"></span>
-                        <span class="header__line"></span>
-                    </label>
-                    <!-- Navegación -->
-                    <nav class="header__nav">
-                        <ul class="header__list">
-                            <li class="header__item">
-                                <a href="#inicio" class="header__link header__link--active">Inicio</a>
-                            </li>
-                            <li class="header__item">
-                                <a href="#modelos" class="header__link">Modelos</a>
-                            </li>
-                            <li class="header__item">
-                                <a href="#recomendaciones" class="header__link">Recomendaciones</a>
-                            </li>
-                            <li class="header__item">
-                                <a href="#legales" class="header__link">Disposiciones Legales</a>
-                            </li>
-                            <li class="header__item">
-                                <a href="#experiencias" class="header__link">Experiencias</a>
-                            </li>
-                        </ul>
-                    </nav>
+                    <h3>El Rincón del Motero</h3>
                 </div>
+                <!-- Menu Movil -->
+                <input type="checkbox" id="menu-toggle" class="header__menu-toggle" />
+
+                <label for="menu-toggle" class="header__menu-button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <!-- Navegación -->
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#inicio" class="nav__link nav__link--active">Inicio</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#modelos" class="nav__link">Modelos</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#recomendaciones" class="nav__link">Recomendaciones</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#legales" class="nav__link">Disposiciones Legales</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#experiencias" class="nav__link">Experiencias</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </header>
         <!-------------------------------------- 
@@ -126,7 +128,7 @@
             <!-- Hero -->
             <section id="inicio" class="hero">
                 <div class="hero__container">
-                    <img src="imagenes/Foto de inicio.png" alt="Motocicleta principal" class="hero__image">
+                    <!-- <img src="imagenes/Foto de inicio.png" alt="Motocicleta principal" class="hero__image"> -->
                     <h1 class="hero__title">Velocidad y Espíritu: Tu Bitácora Motera Definitiva</h1>
                     <p class="hero__description">
                         Aquí, en 'El Rincón del Motero', nos apasionan las motos como a ti. Si buscas datos reales sobre
@@ -145,7 +147,7 @@
                     <h1 class="models__title">Motos Deportivas:</h1>
                     <div class="motorcycle motorcycle--sports">
                         <h2 class="motorcycle__name">Yamaha YZF-R6</h2>
-                        <img src="imagenes/YAMAHA YZF-R6.jpg" alt="Yamaha YZF-R6" class="motorcycle__image">
+                        <!-- <img src="imagenes/YAMAHA YZF-R6.jpg" alt="Yamaha YZF-R6" class="motorcycle__image"> -->
                         <ul class="motorcycle__list">
                             <li class="motorcycle__item">Cilindrada: 599 cc</li>
                             <li class="motorcycle__item">Motor: 4 cilindros en línea, DOHC, refrigerado por líquido</li>
@@ -161,8 +163,8 @@
                     </div>
                     <div class="motorcycle motorcycle--sports">
                         <h2 class="motorcycle__name">Kawasaki Ninja ZX-6R</h2>
-                        <img src="imagenes/Kawasaki Ninja ZX-6R.jpg" alt="Kawasaki Ninja ZX-6R"
-                            class="motorcycle__image">
+                        <!-- <img src="imagenes/Kawasaki Ninja ZX-6R.jpg" alt="Kawasaki Ninja ZX-6R"
+                            class="motorcycle__image"> -->
                         <ul class="motorcycle__list">
                             <li class="motorcycle__item">Cilindrada: 636 cc</li>
                             <li class="motorcycle__item">Motor: 4 cilindros en línea, DOHC, refrigerado por líquido</li>
@@ -181,7 +183,7 @@
                     <h1 class="models__title">Motos para el Trabajo</h1>
                     <div class="motorcycle motorcycle--work">
                         <h2 class="motorcycle__name">Bajaj Boxer BM150</h2>
-                        <img src="imagenes/Boxer_BM_150_1.jpg" alt="Bajaj Boxer BM150" class="motorcycle__image">
+                        <!-- <img src="imagenes/Boxer_BM_150_1.jpg" alt="Bajaj Boxer BM150" class="motorcycle__image"> -->
                         <ul class="motorcycle__list">
                             <li class="motorcycle__item">Cilindrada: 144.8 cc</li>
                             <li class="motorcycle__item">Motor: 1 cilindro, SOHC, refrigerado por aire</li>
@@ -198,7 +200,7 @@
                     </div>
                     <div class="motorcycle motorcycle--work">
                         <h2 class="motorcycle__name">Honda CB125F</h2>
-                        <img src="imagenes/Honda-CB125F-2026-9.jpg" alt="Honda CB125F" class="motorcycle__image">
+                        <!-- <img src="imagenes/Honda-CB125F-2026-9.jpg" alt="Honda CB125F" class="motorcycle__image"> -->
                         <ul class="motorcycle__list">
                             <li class="motorcycle__item">Cilindrada: 124.7 cc</li>
                             <li class="motorcycle__item">Motor: 1 cilindro, OHC, refrigerado por aire</li>
@@ -284,6 +286,16 @@
                 </div>
             </section>
         </main>
+        <!----------------------------
+                Footer
+        ------------------------------>
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer_redes">
+
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 
