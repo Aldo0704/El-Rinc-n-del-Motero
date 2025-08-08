@@ -4,13 +4,13 @@
 :root {
     /* COLORES PRINCIPALES */
     --color-primary: rgba(130, 116, 116, 1);
-    --color-primary-dark: #1d4ed8;
+    --color-primary-dark: #ffffff;
 
     /* COLORES SECUNDARIOS */
     --color-secondary: rgb(119, 101, 101);
-    --color-secondary-dark: #059669;
-    --color-accent: #f59e0b;
-    --color-terceary: #e84118;
+    --color-secondary-dark: #ffffff;
+    --color-accent: #ffffff;
+    --color-terceary: #ffffff;
     /* COLORES NEUTROS */
     --color-white: #ffffff;
     --color-gray-50: #f9fafb;
@@ -128,15 +128,16 @@ body {
 
             /* HEADER LOGO */
             .header__logo {
-                width: 250px;
+                width: 350px;
                 display: flex;
                 align-items: center;
                 gap: 15px;
                 font-size: var(--font-size-xl);
                 font-weight: 700;
-                animation: tech-pulse 2s ease-in-out infinite;
 
                 a {
+                    flex-shrink: 0;
+
                     img {
                         width: 100px;
                         height: 100px;
@@ -152,6 +153,8 @@ body {
                     background-clip: text;
                     -webkit-text-fill-color: transparent;
                     font-weight: bold;
+                    white-space: nowrap;
+                    min-width: 0;
                 }
             }
 
@@ -253,6 +256,11 @@ body {
         }
     }
 }
+
+/* ========================================
+            MEDIA QUERIES
+=======================================*/
+
 
 /* ========================================
   ANIMACIONES GLOBALES ACTUALILZADOS
