@@ -8,9 +8,6 @@
 
     /* COLORES SECUNDARIOS */
     --color-secondary: rgb(119, 101, 101);
-    --color-secondary-dark: #ffffff;
-    --color-accent: #ffffff;
-    --color-terceary: #ffffff;
     /* COLORES NEUTROS */
     --color-white: #ffffff;
     --color-gray-50: #f9fafb;
@@ -265,16 +262,3 @@ body {
 /* ========================================
   ANIMACIONES GLOBALES ACTUALILZADOS
 ========================================*/
-@keyframes tech-pulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-        filter: brightness(1);
-    }
-
-    50% {
-        transform: scale(1.05);
-        filter: brightness(1.2);
-    }
-}
