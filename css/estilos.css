@@ -100,62 +100,169 @@ body {
         "header"
         "main"
         "footer";
-    grid-template-rows: 120px 1fr auto;
+    grid-template-rows: 100px 1fr auto;
+}
 
-    /* ==========================
-            HEADER
-    ===========================*/
-    .header {
-        grid-area: header;
-        background-color: var(--color-primary);
-        box-shadow: var(--shadow-sm);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        transition: var(--transition-normal);
+/* HEADER DESKTOP */
+.header {
+    grid-area: header;
+    background-color: var(--color-primary);
+    /* Color marrón del fondo */
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: var(--transition-normal);
 
-        .header__container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-md);
+    .header__container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-2xl);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+
+        /* LOGO DESKTOP - Círculo con logo */
+        .header__logo {
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            height: 7rem;
+            gap: 20px;
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            flex-shrink: 0;
 
-            /* HEADER LOGO */
-            .header__logo {
-                width: 350px;
+            a {
+                flex-shrink: 0;
+                display: block;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                /* Círculo perfecto */
+                background-color: var(--color-gray-600);
                 display: flex;
                 align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                box-shadow: var(--shadow-md);
+
+                img {
+                    width: 70px;
+                    height: 70px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
+
+            h3 {
+                font-family: 'Oswald', sans-serif;
+                color: var(--color-gray-800);
+                font-weight: 600;
+                white-space: nowrap;
+                font-size: 1.8rem;
+                letter-spacing: 0.5px;
+            }
+        }
+
+        /* OCULTAR botón hamburguesa en DESKTOP */
+        .header__menu-toggle,
+        .header__menu-button {
+            display: none;
+        }
+
+        /* NAVEGACIÓN DESKTOP - Botones redondeados como Figma */
+        .nav {
+            background-color: transparent;
+            position: static;
+            transform: none;
+            opacity: 1;
+            visibility: visible;
+            box-shadow: none;
+            width: auto;
+
+            .nav__list {
+                list-style: none;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                /* Espaciado entre botones como en Figma */
+                padding: 0;
+                margin: 0;
+
+                .nav__item {
+                    border-bottom: none;
+
+                    .nav__link {
+                        display: block;
+                        padding: 12px 20px;
+                        color: var(--color-gray-800);
+                        text-decoration: none;
+                        font-weight: 500;
+                        font-size: var(--font-size-base);
+                        border-radius: 25px;
+                        /* Bordes muy redondeados como Figma */
+                        background-color: var(--color-gray-200);
+                        border: 2px solid var(--color-gray-300);
+                        transition: all var(--transition-fast);
+                        position: relative;
+                        white-space: nowrap;
+
+                        &:hover {
+                            background-color: var(--color-white);
+                            border-color: var(--color-gray-400);
+                            transform: translateY(-1px);
+                            box-shadow: var(--shadow-md);
+                            color: var(--color-gray-900);
+                        }
+
+                        &.nav__link--active {
+                            background-color: var(--color-gray-700);
+                            color: var(--color-white);
+                            border-color: var(--color-gray-700);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ========================================
+            MEDIA QUERIES
+=========================================*/
+
+/* ========================================
+   TABLET (hasta 1024px)
+========================================*/
+@media (max-width: 1024px) {
+    .portfolio {
+        grid-template-rows: 90px 1fr auto;
+    }
+
+    .header {
+        .header__container {
+            height: 90px;
+            padding: 0 var(--spacing-xl);
+
+            .header__logo {
                 gap: 15px;
-                font-size: var(--font-size-xl);
-                font-weight: 700;
 
                 a {
-                    flex-shrink: 0;
+                    width: 70px;
+                    height: 70px;
 
                     img {
-                        width: 100px;
-                        height: 100px;
-                        display: block;
-                        border-radius: var(--radius-md);
+                        width: 60px;
+                        height: 60px;
                     }
                 }
 
                 h3 {
-                    font-family: Irish Grover;
-                    background: var(--color-gray-800);
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    font-weight: bold;
-                    white-space: nowrap;
-                    min-width: 0;
+                    font-size: 1.6rem;
                 }
             }
 
-            /* Header movil con Checkbox convertir a X */
+            /* Checkbox hack para tablet */
             .header__menu-toggle {
                 display: none;
 
@@ -172,80 +279,65 @@ body {
                 }
 
                 &:checked~.nav {
+                    display: block;
                     transform: translateY(0);
                     opacity: 1;
                     visibility: visible;
                 }
             }
 
-            /* Menú movil con checkbox hack*/
+            /* MOSTRAR hamburguesa en TABLET */
             .header__menu-button {
-                display: block;
-                width: 2rem;
-                height: 2rem;
-                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 35px;
+                height: 35px;
                 cursor: pointer;
                 background: none;
                 border: none;
+                gap: 4px;
 
                 span {
                     display: block;
-                    width: 100%;
-                    height: 2px;
-                    background-color: var(--color-gray-700);
-                    position: absolute;
-                    left: 0;
+                    width: 25px;
+                    height: 3px;
+                    background-color: var(--color-gray-800);
+                    border-radius: 2px;
                     transition: var(--transition-normal);
                     transform-origin: center;
-
-                    &:nth-child(1) {
-                        top: 6px;
-                    }
-
-                    &:nth-child(2) {
-                        top: 14px;
-                    }
-
-                    &:nth-child(3) {
-                        top: 22px;
-                    }
                 }
             }
 
-            /* Menú de navegación */
+            /* Ocultar nav horizontal en tablet */
             .nav {
+                display: none;
+            }
+
+            /* Navegación desplegable tablet */
+            .header__menu-toggle:checked~.nav {
                 background-color: var(--color-white);
                 position: absolute;
                 top: 100%;
                 left: 0;
                 width: 100%;
                 box-shadow: var(--shadow-lg);
-                transform: translateY(-100%);
-                opacity: 0;
-                visibility: hidden;
-                transition: var(--transition-normal);
+                border-radius: 0 0 15px 15px;
 
                 .nav__list {
-                    list-style: none;
-                    padding: var(--spacing-md) 0;
+                    flex-direction: column;
+                    gap: 8px;
+                    padding: var(--spacing-lg);
 
                     .nav__item {
-                        border-bottom: 1px solid var(--color-gray-100);
+                        width: 100%;
 
                         .nav__link {
-                            display: block;
-                            padding: var(--spacing-md) var(--spacing-lg);
-                            color: var(--color-gray-700);
-                            text-decoration: none;
-                            font-weight: 500;
-                            transition: var(--transition-fast);
-
-                            &:hover,
-                            .nav__link--active {
-                                background-color: var(--color-secondary);
-                                color: var(--color-white);
-                                transform: translateX(8px);
-                            }
+                            width: 100%;
+                            text-align: center;
+                            border-radius: 12px;
+                            padding: 15px 20px;
                         }
                     }
                 }
@@ -255,9 +347,104 @@ body {
 }
 
 /* ========================================
-            MEDIA QUERIES
-=======================================*/
+   MÓVIL (hasta 768px)
+========================================*/
+@media (max-width: 768px) {
+    .portfolio {
+        grid-template-rows: 80px 1fr auto;
+    }
 
+    .header {
+        .header__container {
+            height: 80px;
+            padding: 0 var(--spacing-lg);
+
+            /* LOGO MÓVIL - Más pequeño */
+            .header__logo {
+                gap: 12px;
+
+                a {
+                    width: 60px;
+                    height: 60px;
+
+                    img {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+
+                h3 {
+                    font-size: 1.4rem;
+                }
+            }
+
+            /* Hamburguesa móvil */
+            .header__menu-button {
+                width: 30px;
+                height: 30px;
+
+                span {
+                    width: 20px;
+                    height: 2px;
+                }
+            }
+
+            /* Navegación móvil desplegable */
+            .header__menu-toggle:checked~.nav {
+                .nav__list {
+                    padding: var(--spacing-md);
+                    gap: 6px;
+
+                    .nav__item {
+                        .nav__link {
+                            padding: 12px 16px;
+                            font-size: var(--font-size-sm);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ========================================
+   MÓVIL PEQUEÑO (hasta 480px)
+========================================*/
+@media (max-width: 480px) {
+    .header {
+        .header__container {
+            padding: 0 var(--spacing-md);
+
+            .header__logo {
+                gap: 8px;
+
+                a {
+                    width: 50px;
+                    height: 50px;
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+
+                h3 {
+                    font-size: 1.2rem;
+                }
+            }
+
+            .header__menu-button {
+                width: 25px;
+                height: 25px;
+
+                span {
+                    width: 18px;
+                    height: 2px;
+                }
+            }
+        }
+    }
+}
 
 /* ========================================
   ANIMACIONES GLOBALES ACTUALILZADOS
