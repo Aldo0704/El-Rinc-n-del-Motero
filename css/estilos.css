@@ -86,10 +86,13 @@ html {
 }
 
 body {
+    /* Tipografia */
     font-family: var(--font-primary);
+    /* Tamaño de letra */
     line-height: 1.6;
     color: var(--color-gray-800);
     background-color: var(--color-white);
+    /* Evita que aparezca una barra de desplazamiento horizontal */
     overflow-x: hidden;
 }
 
@@ -106,7 +109,9 @@ body {
     grid-template-rows: 100px 1fr auto;
 }
 
-/* HEADER DESKTOP */
+/*============================
+        HEADER DESKTOP 
+=============================*/
 .header {
     grid-area: header;
     /* Color marrón del fondo */
@@ -121,21 +126,32 @@ body {
     transition: var(--transition-normal);
 
     .header__container {
+        /* Limita el ancho máximo del contenedor header */
         max-width: 1400px;
+        /* Centra horizontalmente el contenedor */
         margin: 0 auto;
+        /* Añade espacio interno a los lados 3rem q son 48px */
         padding: 0 var(--spacing-2xl);
         display: flex;
+        /* Añade espacio interno a los lados, el logo al lado izquierdo y el menu al lado derecho */
         justify-content: space-between;
+        /* Alinea verticalmente al centro todos los elementos, logo y menu centrados en la altura del header */
         align-items: center;
+        /* Define una altura fija para el header */
         height: 100px;
 
         /* LOGO DESKTOP - Círculo con logo */
         .header__logo {
             display: flex;
+            /* Alinea verticalmente al centro todos los elementos del logo, quedan a la misma altura */
             align-items: center;
+            /* Crea un espacio automático de 20px entre elementos */
             gap: 20px;
+            /* Define el tamaño de fuente para el texto del logo */
             font-size: var(--font-size-xl);
+            /* Hace el texto del logo muy grueso */
             font-weight: 700;
+            /* Evita que el logo se encoja cuando hay poco espacio */
             flex-shrink: 0;
 
             a {
@@ -273,7 +289,7 @@ body {
                 display: none;
 
                 &:checked+.header__menu-button span:nth-child(1) {
-                    transform: rotate(45deg) translate(6px, 6px);
+                    transform: rotate(45deg) translate(5px, 5px);
                 }
 
                 &:checked+.header__menu-button span:nth-child(2) {
@@ -281,7 +297,7 @@ body {
                 }
 
                 &:checked+.header__menu-button span:nth-child(3) {
-                    transform: rotate(-45deg) translate(6px, -6px);
+                    transform: rotate(-45deg) translate(5px, -5px);
                 }
 
                 &:checked~.nav {
@@ -341,6 +357,7 @@ body {
 
                         .nav__link {
                             width: 100%;
+                            /* Para modificar el lugar de las opciones del menu */
                             text-align: center;
                             border-radius: 12px;
                             padding: 15px 20px;
@@ -385,6 +402,23 @@ body {
             }
 
             /* Hamburguesa móvil */
+            .header__menu-toggle {
+                &:checked+.header__menu-button {
+                    span:nth-child(1) {
+                        transform: rotate(45deg) translate(3px, 5px);
+                    }
+
+                    span:nth-child(2) {
+                        opacity: 0;
+                        transform: scale(0);
+                    }
+
+                    span:nth-child(3) {
+                        transform: rotate(-45deg) translate(3px, -6px);
+                    }
+                }
+            }
+
             .header__menu-button {
                 width: 30px;
                 height: 30px;
@@ -396,7 +430,7 @@ body {
             }
 
             /* Navegación móvil desplegable */
-            .header__menu-toggle:checked~.nav {
+            .nav {
                 .nav__list {
                     padding: var(--spacing-md);
                     gap: 6px;
@@ -405,53 +439,53 @@ body {
                         .nav__link {
                             padding: 12px 16px;
                             font-size: var(--font-size-sm);
+                            text-align: left;
                         }
                     }
                 }
             }
         }
     }
-}
 
-/* ========================================
+    /* ========================================
    MÓVIL PEQUEÑO (hasta 480px)
 ========================================*/
-@media (max-width: 480px) {
-    .header {
-        .header__container {
-            padding: 0 var(--spacing-md);
+    @media (max-width: 480px) {
+        .header {
+            .header__container {
+                padding: 0 var(--spacing-md);
 
-            .header__logo {
-                gap: 8px;
+                .header__logo {
+                    gap: 8px;
 
-                a {
-                    width: 50px;
-                    height: 50px;
+                    a {
+                        width: 50px;
+                        height: 50px;
 
-                    img {
-                        width: 40px;
-                        height: 40px;
+                        img {
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+
+                    h3 {
+                        font-size: 1.2rem;
                     }
                 }
 
-                h3 {
-                    font-size: 1.2rem;
-                }
-            }
+                .header__menu-button {
+                    width: 25px;
+                    height: 25px;
 
-            .header__menu-button {
-                width: 25px;
-                height: 25px;
-
-                span {
-                    width: 18px;
-                    height: 2px;
+                    span {
+                        width: 18px;
+                        height: 2px;
+                    }
                 }
             }
         }
     }
-}
 
-/* ========================================
+    /* ========================================
   ANIMACIONES GLOBALES ACTUALILZADOS
 ========================================*/
