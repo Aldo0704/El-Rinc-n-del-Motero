@@ -70,13 +70,16 @@
 /* ====================================
             Estilos CSS
 ======================================*/
-
+/* Elimina los espacios por defecto del navegador para tener control total del diseño. */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* 
+Cuando alguien hace clic en un enlace que va a otra sección de la misma página, en lugar de "saltar" instantáneamente,la página se desliza suavemente hasta esa sección. 
+*/
 html {
     scroll-behavior: smooth;
     font-size: 16px;
@@ -106,12 +109,15 @@ body {
 /* HEADER DESKTOP */
 .header {
     grid-area: header;
-    background-color: var(--color-primary);
     /* Color marrón del fondo */
+    background-color: var(--color-primary);
     box-shadow: var(--shadow-sm);
     position: sticky;
+    /*Se queda pegado arriba */
     top: 0;
+    /* Se mantiene sobre otros elementos */
     z-index: 1000;
+    /* Esta propiedad hace que cualquier cambio en el header sea suave y animado en lugar de instantáneo: */
     transition: var(--transition-normal);
 
     .header__container {
@@ -184,8 +190,8 @@ body {
                 list-style: none;
                 display: flex;
                 align-items: center;
-                gap: 12px;
                 /* Espaciado entre botones como en Figma */
+                gap: 12px;
                 padding: 0;
                 margin: 0;
 
@@ -199,8 +205,8 @@ body {
                         text-decoration: none;
                         font-weight: 500;
                         font-size: var(--font-size-base);
-                        border-radius: 25px;
                         /* Bordes muy redondeados como Figma */
+                        border-radius: 25px;
                         background-color: var(--color-gray-200);
                         border: 2px solid var(--color-gray-300);
                         transition: all var(--transition-fast);
