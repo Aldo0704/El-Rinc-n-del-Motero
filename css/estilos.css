@@ -280,6 +280,22 @@ body {
             }
         }
     }
+
+    .main {
+        grid-area: main;
+
+        .models {
+            padding: var(--spacing-4xl) var(--spacing-xl);
+            background-color: red;
+
+            .models__container {
+                max-width: 1280px;
+                margin: 0 auto;
+                display: grid;
+                gap: var(--spacing-2xl);
+            }
+        }
+    }
 }
 
 
