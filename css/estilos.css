@@ -42,6 +42,7 @@
     --spacing-2xl: 3rem;
     --spacing-3xl: 4rem;
     --spacing-4xl: 6rem;
+    --spacing-8xl: 10rem;
     /* SOMBRAS */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -91,7 +92,7 @@ body {
     /* Tamaño de letra */
     line-height: 1.6;
     color: var(--color-gray-800);
-    background-color: var(--color-white);
+    background-color: var(--color-gray-100);
     /* Evita que aparezca una barra de desplazamiento horizontal */
     overflow-x: hidden;
 }
@@ -107,189 +108,87 @@ body {
         "main"
         "footer";
     grid-template-rows: 100px 1fr auto;
-}
 
-/*============================
-        HEADER DESKTOP 
-=============================*/
-.header {
-    grid-area: header;
-    /* Color marrón del fondo */
-    background-color: var(--color-primary);
-    box-shadow: var(--shadow-sm);
-    position: sticky;
-    /*Se queda pegado arriba */
-    top: 0;
-    /* Se mantiene sobre otros elementos */
-    z-index: 1000;
-    /* Esta propiedad hace que cualquier cambio en el header sea suave y animado en lugar de instantáneo: */
-    transition: var(--transition-normal);
-
-    .header__container {
-        /* Limita el ancho máximo del contenedor header */
-        max-width: 1400px;
-        /* Centra horizontalmente el contenedor */
-        margin: 0 auto;
-        /* Añade espacio interno a los lados 3rem q son 48px */
-        padding: 0 var(--spacing-2xl);
-        display: flex;
-        /* Añade espacio interno a los lados, el logo al lado izquierdo y el menu al lado derecho */
-        justify-content: space-between;
-        /* Alinea verticalmente al centro todos los elementos, logo y menu centrados en la altura del header */
-        align-items: center;
-        /* Define una altura fija para el header */
-        height: 100px;
-
-        /* LOGO DESKTOP - Círculo con logo */
-        .header__logo {
-            display: flex;
-            /* Alinea verticalmente al centro todos los elementos del logo, quedan a la misma altura */
-            align-items: center;
-            /* Crea un espacio automático de 20px entre elementos */
-            gap: 20px;
-            /* Define el tamaño de fuente para el texto del logo */
-            font-size: var(--font-size-xl);
-            /* Hace el texto del logo muy grueso */
-            font-weight: 700;
-            /* Evita que el logo se encoja cuando hay poco espacio */
-            flex-shrink: 0;
-
-            a {
-                flex-shrink: 0;
-                display: block;
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                /* Círculo perfecto */
-                background-color: var(--color-gray-600);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                overflow: hidden;
-                box-shadow: var(--shadow-md);
-
-                img {
-                    width: 70px;
-                    height: 70px;
-                    object-fit: cover;
-                    border-radius: 50%;
-                }
-            }
-
-            h3 {
-                font-family: 'Oswald', sans-serif;
-                color: var(--color-gray-800);
-                font-weight: 600;
-                white-space: nowrap;
-                font-size: 1.8rem;
-                letter-spacing: 0.5px;
-            }
-        }
-
-        /* OCULTAR botón hamburguesa en DESKTOP */
-        .header__menu-toggle,
-        .header__menu-button {
-            display: none;
-        }
-
-        /* NAVEGACIÓN DESKTOP - Botones redondeados como Figma */
-        .nav {
-            background-color: transparent;
-            position: static;
-            transform: none;
-            opacity: 1;
-            visibility: visible;
-            box-shadow: none;
-            width: auto;
-
-            .nav__list {
-                list-style: none;
-                display: flex;
-                align-items: center;
-                /* Espaciado entre botones como en Figma */
-                gap: 12px;
-                padding: 0;
-                margin: 0;
-
-                .nav__item {
-                    border-bottom: none;
-
-                    .nav__link {
-                        display: block;
-                        padding: 12px 20px;
-                        color: var(--color-gray-800);
-                        text-decoration: none;
-                        font-weight: 500;
-                        font-size: var(--font-size-base);
-                        /* Bordes muy redondeados como Figma */
-                        border-radius: 25px;
-                        background-color: var(--color-gray-200);
-                        border: 2px solid var(--color-gray-300);
-                        transition: all var(--transition-fast);
-                        position: relative;
-                        white-space: nowrap;
-
-                        &:hover {
-                            background-color: var(--color-white);
-                            border-color: var(--color-gray-400);
-                            transform: translateY(-1px);
-                            box-shadow: var(--shadow-md);
-                            color: var(--color-gray-900);
-                        }
-
-                        &.nav__link--active {
-                            background-color: var(--color-gray-700);
-                            color: var(--color-white);
-                            border-color: var(--color-gray-700);
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-/* ========================================
-            MEDIA QUERIES
-=========================================*/
-
-/* ========================================
-   TABLET (hasta 1024px)
-========================================*/
-@media (max-width: 1024px) {
-    .portfolio {
-        grid-template-rows: 90px 1fr auto;
-    }
+    /*============================
+            HEADER DESKTOP 
+    =============================*/
 
     .header {
-        .header__container {
-            height: 90px;
-            padding: 0 var(--spacing-xl);
+        grid-area: header;
+        /* Color marrón del fondo */
+        background-color: var(--color-primary);
+        box-shadow: var(--shadow-sm);
+        position: sticky;
+        /*Se queda pegado arriba */
+        top: 0;
+        /* Se mantiene sobre otros elementos */
+        z-index: 1000;
+        /* Esta propiedad hace que cualquier cambio en el header sea suave y animado en lugar de instantáneo: */
+        transition: var(--transition-normal);
 
+        .header__container {
+            /* Limita el ancho máximo del contenedor header */
+            max-width: 1280px;
+            height: auto;
+            /* Centra horizontalmente el contenedor */
+            margin: 0 auto;
+            /* Añade espacio interno a los lados 3rem q son 48px */
+            padding: 0 var(--spacing-2xl);
+            display: flex;
+            /* Añade espacio interno a los lados, el logo al lado izquierdo y el menu al lado derecho */
+            justify-content: space-between;
+            /* Alinea verticalmente al centro todos los elementos, logo y menu centrados en la altura del header */
+            align-items: center;
+            /* Define una altura fija para el header */
+            height: 7rem;
+
+            /* LOGO DESKTOP - Círculo con logo */
             .header__logo {
-                gap: 15px;
+                width: 250px;
+                display: flex;
+                align-items: center;
+                /* Crea un espacio automático de 5px entre elementos */
+                gap: 5px;
+                /* Define el tamaño de fuente para el texto del logo */
+                font-size: var(--font-size-xl);
+                /* Hace el texto del logo muy grueso */
+                font-weight: 700;
 
                 a {
-                    width: 70px;
-                    height: 70px;
+                    flex-shrink: 0;
+                    display: block;
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 50%;
+                    /* Círculo perfecto */
+                    background-color: var(--color-gray-600);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    box-shadow: var(--shadow-md);
 
                     img {
-                        width: 60px;
-                        height: 60px;
+                        width: 70px;
+                        height: 70px;
+                        border-radius: 50%;
                     }
                 }
 
                 h3 {
-                    font-size: 1.6rem;
+                    font-family: 'Oswald', sans-serif;
+                    color: var(--color-gray-800);
+                    font-weight: 600;
+                    white-space: nowrap;
+                    font-size: 1.8rem;
                 }
             }
 
-            /* Checkbox hack para tablet */
             .header__menu-toggle {
                 display: none;
 
                 &:checked+.header__menu-button span:nth-child(1) {
-                    transform: rotate(45deg) translate(5px, 5px);
+                    transform: rotate(45deg) translate(6px, 6px);
                 }
 
                 &:checked+.header__menu-button span:nth-child(2) {
@@ -297,70 +196,84 @@ body {
                 }
 
                 &:checked+.header__menu-button span:nth-child(3) {
-                    transform: rotate(-45deg) translate(5px, -5px);
+                    transform: rotate(-45deg) translate(6px, -6px);
                 }
 
                 &:checked~.nav {
-                    display: block;
                     transform: translateY(0);
                     opacity: 1;
                     visibility: visible;
                 }
             }
 
-            /* MOSTRAR hamburguesa en TABLET */
+            /* Menu movil */
             .header__menu-button {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                width: 35px;
-                height: 35px;
+                display: block;
+                width: 2rem;
+                height: 2rem;
+                position: relative;
                 cursor: pointer;
                 background: none;
                 border: none;
-                gap: 4px;
 
                 span {
                     display: block;
-                    width: 25px;
-                    height: 3px;
-                    background-color: var(--color-gray-800);
-                    border-radius: 2px;
+                    width: 100%;
+                    height: 2px;
+                    background-color: var(--color-gray-700);
+                    position: absolute;
+                    left: 0;
                     transition: var(--transition-normal);
                     transform-origin: center;
+
+                    &:nth-child(1) {
+                        top: 6px;
+                    }
+
+                    &:nth-child(2) {
+                        top: 14px;
+                    }
+
+                    &:nth-child(3) {
+                        top: 22px;
+                    }
                 }
             }
 
-            /* Ocultar nav horizontal en tablet */
             .nav {
-                display: none;
-            }
-
-            /* Navegación desplegable tablet */
-            .header__menu-toggle:checked~.nav {
                 background-color: var(--color-white);
                 position: absolute;
                 top: 100%;
                 left: 0;
                 width: 100%;
                 box-shadow: var(--shadow-lg);
-                border-radius: 0 0 15px 15px;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition-normal);
 
                 .nav__list {
-                    flex-direction: column;
-                    gap: 8px;
-                    padding: var(--spacing-lg);
+                    list-style: none;
+                    padding: var(--spacing-md) 0;
 
                     .nav__item {
-                        width: 100%;
+                        border-bottom: 1px solid var(--color-gray-100);
 
                         .nav__link {
-                            width: 100%;
-                            /* Para modificar el lugar de las opciones del menu */
-                            text-align: center;
-                            border-radius: 12px;
-                            padding: 15px 20px;
+                            display: block;
+                            padding: var(--spacing-md) var(--spacing-lg);
+                            color: var(--color-gray-800);
+                            text-decoration: none;
+                            font-weight: 500;
+                            border-radius: 25px;
+                            transition: var(--transition-fast);
+
+                            &:hover,
+                            .nav__link--active {
+                                background-color: var(--color-gray-700);
+                                color: var(--color-white);
+                                transform: translateX(8px);
+                            }
                         }
                     }
                 }
@@ -369,123 +282,95 @@ body {
     }
 }
 
+
+
+
 /* ========================================
-   MÓVIL (hasta 768px)
+            MEDIA QUERIES
+=========================================*/
+
+/* ========================================
+   TABLET (hasta 768px)
 ========================================*/
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .portfolio {
-        grid-template-rows: 80px 1fr auto;
-    }
-
-    .header {
-        .header__container {
-            height: 80px;
-            padding: 0 var(--spacing-lg);
-
-            /* LOGO MÓVIL - Más pequeño */
-            .header__logo {
-                gap: 12px;
-
-                a {
-                    width: 60px;
-                    height: 60px;
-
-                    img {
-                        width: 50px;
-                        height: 50px;
-                    }
-                }
-
-                h3 {
-                    font-size: 1.4rem;
-                }
-            }
-
-            /* Hamburguesa móvil */
-            .header__menu-toggle {
-                &:checked+.header__menu-button {
-                    span:nth-child(1) {
-                        transform: rotate(45deg) translate(3px, 5px);
-                    }
-
-                    span:nth-child(2) {
-                        opacity: 0;
-                        transform: scale(0);
-                    }
-
-                    span:nth-child(3) {
-                        transform: rotate(-45deg) translate(3px, -6px);
-                    }
-                }
-            }
-
-            .header__menu-button {
-                width: 30px;
-                height: 30px;
-
-                span {
-                    width: 20px;
-                    height: 2px;
-                }
-            }
-
-            /* Navegación móvil desplegable */
-            .nav {
-                .nav__list {
-                    padding: var(--spacing-md);
-                    gap: 6px;
-
-                    .nav__item {
-                        .nav__link {
-                            padding: 12px 16px;
-                            font-size: var(--font-size-sm);
-                            text-align: left;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    /* ========================================
-   MÓVIL PEQUEÑO (hasta 480px)
-========================================*/
-    @media (max-width: 480px) {
         .header {
             .header__container {
-                padding: 0 var(--spacing-md);
-
-                .header__logo {
-                    gap: 8px;
-
-                    a {
-                        width: 50px;
-                        height: 50px;
-
-                        img {
-                            width: 40px;
-                            height: 40px;
-                        }
-                    }
-
-                    h3 {
-                        font-size: 1.2rem;
-                    }
+                .header__menu-button {
+                    display: none;
                 }
 
-                .header__menu-button {
-                    width: 25px;
-                    height: 25px;
+                .nav {
+                    position: static;
+                    transform: none;
+                    opacity: 1;
+                    visibility: visible;
+                    box-shadow: none;
+                    background: transparent;
 
-                    span {
-                        width: 18px;
-                        height: 2px;
+                    .nav__list {
+                        display: flex;
+                        padding: 0;
+                        gap: var(--spacing-lg);
+
+                        .nav__item {
+                            border: none;
+
+                            .nav__link {
+                                padding: var(--spacing-sm) var(--spacing-md);
+                                border-radius: var(--radius-3xl);
+                            }
+                        }
                     }
                 }
             }
         }
-    }
 
-    /* ========================================
+
+    }
+}
+
+/* ========================================
+            DESKTOP RESPONSIVE
+========================================*/
+@media (min-width: 1024px) {
+    .portfolio {
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+
+        .header {
+            display: flex;
+            align-items: center;
+            width: 100vw;
+
+            .header__container {
+                width: 100%;
+
+                .header__logo {
+                    width: 350px;
+                    gap: 10px;
+                    display: flex;
+
+                    a {
+                        img {
+                            width: 100%;
+                            transition: transform var(--transition-normal);
+                        }
+                    }
+                }
+
+                .nav {
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
+
+/* ========================================
   ANIMACIONES GLOBALES ACTUALILZADOS
 ========================================*/
