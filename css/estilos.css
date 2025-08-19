@@ -4,7 +4,7 @@
 :root {
     /* COLORES PRINCIPALES */
     --color-primary: rgba(130, 116, 116, 1);
-    --color-primary-dark: #ffffff;
+    --color-primary-dark: #6226ec;
 
     /* COLORES SECUNDARIOS */
     --color-secondary: rgb(119, 101, 101);
@@ -129,11 +129,11 @@ body {
         .header__container {
             /* Limita el ancho máximo del contenedor header */
             max-width: 1280px;
-            height: auto;
+            /* height: auto; */
             /* Centra horizontalmente el contenedor */
             margin: 0 auto;
             /* Añade espacio interno a los lados 3rem q son 48px */
-            padding: 0 var(--spacing-2xl);
+            padding: 0 var(--spacing-md);
             display: flex;
             /* Añade espacio interno a los lados, el logo al lado izquierdo y el menu al lado derecho */
             justify-content: space-between;
@@ -180,7 +180,7 @@ body {
                     color: var(--color-gray-800);
                     font-weight: 600;
                     white-space: nowrap;
-                    font-size: 1.8rem;
+                    font-size: 1.6rem;
                 }
             }
 
@@ -292,14 +292,14 @@ body {
                 position: relative;
 
                 img {
-                    width: 100%;
+                    width: 82.4%;
                     position: relative;
                     filter: brightness(0.7);
                 }
 
                 .hero__content {
                     /* background-color: aquamarine; */
-                    width: 80%;
+                    width: 65%;
                     z-index: 3;
                     position: absolute;
                     top: 15%;
@@ -307,11 +307,11 @@ body {
 
                     .hero__title {
                         font-weight: bold;
-                        font-size: 32px;
+                        font-size: 25px;
                     }
 
                     .hero__description {
-                        font-size: 20px;
+                        font-size: 18px;
                         text-align: justify;
                         font-weight: bold;
                     }
@@ -332,8 +332,16 @@ body {
                 .sports__header {
                     .sports__category {
                         .models__title {
-                            text-align: center;
+                            /* text-align: center;
+                            font-weight: bold; */
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 78%;
+                            font-size: 1.5rem;
                             font-weight: bold;
+                            padding: 1rem;
+                            margin: 0;
                         }
                     }
 
@@ -345,12 +353,14 @@ body {
 
                             /* height: 50px; */
                             .motorcycle-card__name {
+                                width: 78%;
                                 text-align: center;
                                 margin-top: 20px;
                             }
 
                             .motorcycle-card__image {
-                                width: 100%;
+                                width: 78%;
+                                border-radius: 10%;
                                 /* height: 100%; */
                             }
                         }
@@ -361,24 +371,154 @@ body {
                             .motorcycle-card__characteristics {
                                 .motorcycle-card__characteristics-title {
                                     text-align: center;
+                                    width: 78%;
                                 }
 
                                 .motorcycle-card__characteristics-list {
                                     /* background-color: aqua; */
                                     display: flex;
                                     flex-direction: column;
-                                    align-items: start;
+                                    /* align-items: start; */
 
                                     .motorcycle-card__characteristics-item {
                                         /* background-color: aquamarine; */
-                                        margin: 0 60px;
-                                        line-height: 3;
+                                        margin: 0 40px;
+                                        line-height: 2.4;
+                                        width: 65%;
+
                                     }
                                 }
                             }
 
                             .motorcycle-card__description {
-                                line-height: 3;
+                                line-height: 2.4;
+                                width: 80%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .job__container {
+                max-width: 1280px;
+                margin: 0 auto;
+                display: grid;
+                gap: var(--spacing-2xl);
+
+                .job__header {
+                    .job__category {
+                        .job__title {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 85%;
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                            padding: 1rem;
+                            margin: 0;
+                        }
+                    }
+
+                    .motorcycle-card--job {
+                        margin-bottom: 10px;
+
+                        .motorcycle-card__image-content {
+                            width: 540px;
+
+                            .motorcycle-card__name {
+                                width: 78%;
+                                text-align: center;
+                                margin-top: 20px;
+
+                            }
+
+                            .motorcycle-card__image {
+                                width: 78%;
+                                border-radius: 10%;
+                            }
+                        }
+
+                        .motorcycle-card__content {
+                            .motorcycle-card__characteristics {
+                                .motorcycle-card__characteristics-title {
+                                    text-align: center;
+                                    width: 78%;
+                                }
+
+                                .motorcycle-card__characteristics-list {
+                                    display: flex;
+                                    flex-direction: column;
+
+                                    .motorcycle-card__characteristics-item {
+                                        margin: 0 40px;
+                                        line-height: 2.4;
+                                        width: 65%;
+                                    }
+                                }
+                            }
+
+                            .motorcycle-card__description {
+                                line-height: 2.4;
+                                width: 80%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .recommendations {
+            padding: var(--spacing-4xl) var(--spacing-md);
+            background-color: var(--color-gray-50);
+
+            .recommendations__container {
+                max-width: 1280px;
+                margin: 0 auto;
+                display: grid;
+                gap: var(--spacing-2xl);
+
+                .recommendations__bottom {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: var(--spacing-2xl);
+                    align-items: start;
+
+                    .recommendations__timeline {
+                        margin: var(--spacing-xl) 0;
+
+                        .recommendations__title {
+                            font-size: var(--font-size-xl);
+                            font-weight: 600;
+                            color: var(--color-primary-dark);
+                            margin-bottom: var(--spacing-lg);
+                            display: flex;
+                            align-items: center;
+                            gap: var(--spacing-sm);
+                        }
+
+                        .timeline-item {
+                            display: flex;
+                            align-items: flex-start;
+                            gap: var(--spacing-md);
+                            margin-bottom: var(--spacing-md);
+                            padding: var(--spacing-md);
+                            background-color: var(--color-white);
+                            border-radius: var(--radius-lg);
+                            box-shadow: var(--shadow-sm);
+                            transition: var(--transition-normal);
+                            border-left: 4px solid var(--color-primary-dark);
+                            width: 80%;
+
+                            .timeline-item__content {
+                                p {
+                                    font-size: var(--font-size-sm);
+                                    color: var(--color-gray-600);
+                                }
+                            }
+
+                            &:hover {
+                                transform: translateX(8px);
+                                box-shadow: var(--shadow-md);
                             }
                         }
                     }
