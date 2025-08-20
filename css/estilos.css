@@ -287,21 +287,15 @@ body {
                 max-width: 1280px;
                 margin: 0 auto;
                 display: grid;
-                /* Mantiene el grid para apilar las tarjetas si es necesario */
                 gap: var(--spacing-2xl);
                 padding: var(--spacing-xl);
-                /* Padding general para el contenedor */
             }
 
-            /* Estilos base para las tarjetas de motocicleta (móvil-first) */
             .motorcycle-card--sports,
             .motorcycle-card--job {
                 display: flex;
-                /* Cambiado a flex para control más fácil en móvil */
                 flex-direction: column;
-                /* Apila los elementos verticalmente */
                 align-items: center;
-                /* Centra la imagen y el texto */
                 margin-bottom: var(--spacing-2xl);
                 padding: var(--spacing-lg);
                 border-radius: var(--radius-lg);
@@ -311,15 +305,11 @@ body {
 
             .motorcycle-card__image-content {
                 width: 100%;
-                /* La imagen ocupará el 100% del ancho disponible en móvil */
                 height: auto;
-                /* Eliminado: width: 400px; y width: 350px; para permitir crecimiento */
                 min-width: 0;
-                /* Asegura que la columna de Grid se pueda encoger si es necesario */
 
                 .motorcycle-card__name {
                     text-align: center;
-                    /* Centrado en móvil */
                     margin-top: 0;
                     margin-bottom: var(--spacing-sm);
                     font-size: var(--font-size-2xl);
@@ -335,48 +325,34 @@ body {
 
             .motorcycle-card__content {
                 width: 100%;
-                /* Ocupa el 100% del ancho del padre en móvil */
                 display: flex;
                 flex-direction: column;
                 gap: var(--spacing-md);
                 min-width: 0;
-                /* MODIFICACIÓN CLAVE: Eliminado text-align: center para que los hijos directos puedan alinear su texto a la izquierda */
                 align-items: center;
-                /* Centra horizontalmente los ítems flex dentro de esta columna */
 
                 .motorcycle-card__characteristics {
                     .motorcycle-card__characteristics-title {
                         text-align: center;
-                        /* Centrado en móvil */
                         font-size: var(--font-size-xl);
                     }
 
                     .motorcycle-card__characteristics-list {
                         display: flex;
                         flex-direction: column;
-                        /* Alinear los ítems de la lista a la izquierda */
                         align-items: flex-start;
-                        /* Alinea los ítems a la izquierda */
                         margin-left: auto;
-                        /* Centra el bloque de la lista */
                         margin-right: auto;
-                        /* Centra el bloque de la lista */
                         padding-left: 0;
-                        /* Elimina el padding-left que causaba sangría */
                         list-style-position: inside;
-                        /* Asegura que los puntos de la lista estén dentro */
                         list-style: disc;
                         font-size: var(--font-size-base);
-                        /* Asegura que el texto dentro de la lista esté a la izquierda */
                         text-align: left;
-                        /* Alinea el texto a la izquierda dentro de los ítems */
                         max-width: fit-content;
-                        /* Permite que el bloque se ajuste a su contenido más largo */
                     }
 
                     .motorcycle-card__characteristics-item {
                         margin: 0;
-                        /* Elimina margin: 0 auto; para evitar el descuadre */
                         line-height: 1.6;
                         width: auto;
                         max-width: 100%;
@@ -392,28 +368,22 @@ body {
                     word-wrap: break-word;
                     overflow-wrap: break-word;
                     text-align: left;
-                    /* Asegura que la descripción esté a la izquierda */
-                    /* MODIFICACIÓN CLAVE: Cambiado a fit-content para que se alinee con la lista */
                     max-width: fit-content;
-                    /* Permite que el bloque se ajuste a su contenido más largo */
                     margin-left: auto;
-                    /* Centra el bloque de descripción */
                     margin-right: auto;
-                    /* Centra el bloque de descripción */
                 }
             }
         }
 
         .recommendations {
-            /* Ajustado el padding superior para reducir el espacio */
             padding: var(--spacing-md) var(--spacing-xl);
-            /* Reducido de --spacing-xl a --spacing-md */
 
             .recommendations__container {
                 max-width: 1280px;
                 margin: 0 auto;
                 display: grid;
                 gap: var(--spacing-2xl);
+                padding-left: var(--spacing-xl);
 
                 .recommendations__bottom {
                     display: grid;
@@ -422,9 +392,7 @@ body {
                     align-items: start;
 
                     .recommendations__timeline {
-                        /* Ajustado el margen superior para reducir el espacio */
                         margin: var(--spacing-md) 0;
-                        /* Reducido de --spacing-xl a --spacing-md */
 
                         .recommendations__title {
                             font-size: var(--font-size-xl);
@@ -483,14 +451,10 @@ body {
                 }
 
                 .nav {
-                    /* Asegura que el contenedor nav se comporte como un flexbox y justifique a la derecha */
                     display: flex;
                     justify-content: flex-end;
-                    /* Alinea los elementos a la derecha */
                     align-items: center;
-                    /* Centra verticalmente los elementos */
                     position: static;
-                    /* Elimina la posición absoluta del móvil */
                     transform: none;
                     opacity: 1;
                     visibility: visible;
@@ -502,13 +466,10 @@ body {
                         padding: 0;
                         gap: var(--spacing-lg);
                         display: flex;
-                        /* Asegura que los ítems se muestren en línea */
                         flex-direction: row;
-                        /* Importante para el layout horizontal */
 
                         .nav__item {
                             border-bottom: none;
-                            /* Elimina el borde inferior que se aplica en móvil */
 
                             .nav__link {
                                 display: block;
@@ -523,7 +484,6 @@ body {
                                     background-color: var(--color-gray-700);
                                     color: var(--color-white);
                                     transform: translateX(0);
-                                    /* Elimina la transformación de translateX de móvil */
                                 }
                             }
                         }
@@ -563,18 +523,16 @@ body {
 
             .models {
 
-                /* Aplicamos CSS Grid directamente a cada tarjeta de motocicleta para el diseño de 2 columnas */
                 .sports__category,
-                .job__category{
+                .job__category {
                     padding: var(--spacing-md);
                     text-align: center;
                 }
+
                 .motorcycle-card--sports,
                 .motorcycle-card--job {
                     display: grid;
-                    /* Convierte la tarjeta en un contenedor grid */
                     grid-template-columns: 6fr 3fr;
-                    /* Proporciones para tablet: imagen más grande */
                     gap: var(--spacing-xl);
                     align-items: start;
                     margin-bottom: var(--spacing-2xl);
@@ -586,13 +544,11 @@ body {
 
                 .motorcycle-card__image-content {
                     width: 100%;
-                    /* Asegura que ocupe todo el ancho de su columna de grid */
                     height: auto;
                     min-width: 0;
 
                     .motorcycle-card__name {
                         text-align: center;
-                        /* Alineación a la izquierda en tablet/desktop */
                         margin-top: 0;
                         margin-bottom: var(--spacing-sm);
                         font-size: var(--font-size-2xl);
@@ -611,44 +567,30 @@ body {
                     flex-direction: column;
                     gap: var(--spacing-md);
                     min-width: 0;
-                    /* Centrar los elementos de la columna de contenido en tablet */
                     align-items: center;
-                    /* Centra horizontalmente los ítems flex dentro de esta columna */
-                    /* MODIFICACIÓN CLAVE: Eliminado text-align: center para que los hijos directos puedan alinear su texto a la izquierda */
-                    /* text-align: center; */
+                    padding: var(--spacing-md);
 
                     .motorcycle-card__characteristics {
-                        padding: var(--spacing-2xl);
                         .motorcycle-card__characteristics-title {
                             text-align: center;
-                            /* Centra el título de características en tablet */
                             font-size: var(--font-size-xl);
-                            padding: var(--spacing-lg);
+                            padding: var(--spacing-xl);
                         }
 
                         .motorcycle-card__characteristics-list {
                             display: flex;
                             flex-direction: column;
-                            /* Alinear los ítems de la lista a la izquierda */
                             align-items: flex-start;
-                            /* Alinea los ítems a la izquierda */
                             padding-left: 0;
-                            /* Elimina el padding-left que causaba sangría */
                             list-style-position: inside;
-                            /* Asegura que los puntos de la lista estén dentro */
                             margin-left: auto;
-                            /* Centra el bloque de la lista */
                             margin-right: auto;
-                            /* Centra el bloque de la lista */
                             text-align: left;
-                            /* Alinea el texto a la izquierda dentro de los ítems */
                             max-width: fit-content;
-                            /* Permite que el bloque se ajuste a su contenido más largo */
                         }
 
                         .motorcycle-card__characteristics-item {
                             margin: 0;
-                            /* Elimina margin: 0 auto; para evitar el descuadre */
                             line-height: 1.6;
                             width: auto;
                             max-width: 100%;
@@ -664,13 +606,9 @@ body {
                         word-wrap: break-word;
                         overflow-wrap: break-word;
                         text-align: left;
-                        /* Asegura que la descripción esté a la izquierda */
                         max-width: fit-content;
-                        /* Permite que el bloque se ajuste a su contenido más largo */
                         margin-left: auto;
-                        /* Centra el bloque de descripción */
                         margin-right: auto;
-                        /* Centra el bloque de descripción */
                     }
                 }
             }
@@ -710,13 +648,9 @@ body {
                 }
 
                 .nav {
-                    /* Asegura que el contenedor nav se comporte como un flexbox y justifique a la derecha */
                     display: flex;
                     justify-content: flex-end;
-                    /* Alinea los elementos a la derecha */
                     align-items: center;
-                    /* Centra verticalmente los elementos */
-                    /* No se necesitan las propiedades de posición de móvil aquí */
                 }
             }
         }
@@ -729,7 +663,6 @@ body {
         .motorcycle-card--job {
             display: grid;
             grid-template-columns: 7fr 2fr;
-            /* Proporciones para desktop: imagen aún más grande */
             gap: var(--spacing-xl);
             align-items: start;
             margin-bottom: var(--spacing-2xl);
@@ -750,45 +683,28 @@ body {
             flex-direction: column;
             gap: var(--spacing-md);
             min-width: 0;
-            /* Centrar los elementos de la columna de contenido */
             align-items: center;
-            /* Centra horizontalmente los ítems flex dentro de esta columna */
-            /* MODIFICACIÓN CLAVE: Eliminado text-align: center para que los hijos directos puedan alinear su texto a la izquierda */
-            /* text-align: center; */
-
 
             .motorcycle-card__characteristics {
                 .motorcycle-card__characteristics-title {
                     text-align: center;
-                    /* Centra el título de características */
                     font-size: var(--font-size-xl);
                 }
 
                 .motorcycle-card__characteristics-list {
-                    /* Para centrar los ítems de lista individualmente, necesitamos anular el `align-items: start` y los `padding-left` */
                     display: flex;
-                    /* Asegura que los ítems se mantengan en su propio flujo */
                     flex-direction: column;
-                    /* Apila los ítems verticalmente */
                     align-items: flex-start;
-                    /* Alinea los ítems a la izquierda */
                     padding-left: 0;
-                    /* Elimina el padding-left que causaba sangría */
                     list-style-position: inside;
-                    /* Asegura que los puntos de la lista estén dentro */
                     margin-left: auto;
-                    /* Centra el bloque de la lista */
                     margin-right: auto;
-                    /* Centra el bloque de la lista */
                     text-align: left;
-                    /* Alinea el texto a la izquierda dentro de los ítems */
                     max-width: fit-content;
-                    /* Permite que el bloque se ajuste a su contenido más largo */
                 }
 
                 .motorcycle-card__characteristics-item {
                     margin: 0;
-                    /* Elimina margin: 0 auto; para evitar el descuadre */
                     line-height: 1.6;
                     width: auto;
                     max-width: 100%;
@@ -804,17 +720,14 @@ body {
                 word-wrap: break-word;
                 overflow-wrap: break-word;
                 text-align: left;
-                /* Asegura que la descripción esté a la izquierda */
                 max-width: fit-content;
-                /* MODIFICACIÓN CLAVE: Cambiado a fit-content para que se alinee con la lista */
                 margin-left: auto;
-                /* Centra el bloque de descripción */
                 margin-right: auto;
-                /* Centra el bloque de descripción */
             }
         }
     }
 }
+
 /* ========================================
   ANIMACIONES GLOBALES ACTUALILZADOS
 ========================================*/
