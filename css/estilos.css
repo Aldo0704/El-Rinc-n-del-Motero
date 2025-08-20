@@ -376,57 +376,130 @@ body {
         }
 
         .recommendations {
-            padding: var(--spacing-md) var(--spacing-xl);
+            padding: 50px 20px;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
 
             .recommendations__container {
-                max-width: 1280px;
+                max-width: 1200px;
                 margin: 0 auto;
-                display: grid;
-                gap: var(--spacing-2xl);
-                padding-left: var(--spacing-xl);
 
-                .recommendations__bottom {
+                .recommendations__title {
+                    text-align: center;
+                    font-size: 2.5em;
+                    /* Valor base para todos los tamaños */
+                    margin-bottom: 40px;
+                    /* Valor base para todos los tamaños */
+                    color: #222;
+                }
+
+                .recommendations__grid {
                     display: grid;
+                    /* Por defecto, una columna para móvil */
                     grid-template-columns: 1fr;
-                    gap: var(--spacing-2xl);
-                    align-items: start;
+                    gap: 25px;
+                    padding: 0 15px;
+                    /* Padding horizontal para móviles */
+                    max-width: 1200px;
+                    margin: 0 auto;
 
-                    .recommendations__timeline {
-                        margin: var(--spacing-md) 0;
+                    .recommendations__card {
+                        background-color: #fff;
+                        border-radius: 12px;
+                        padding: 25px;
+                        text-align: center;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                        transition: transform 0.3s, box-shadow 0.3s;
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
 
-                        .recommendations__title {
-                            font-size: var(--font-size-xl);
-                            font-weight: 600;
-                            color: var(--color-primary-dark);
-                            margin-bottom: var(--spacing-lg);
-                            display: flex;
-                            align-items: center;
-                            gap: var(--spacing-sm);
+                        &:hover {
+                            transform: translateY(-5px);
+                            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
                         }
 
-                        .timeline-item {
-                            display: flex;
-                            align-items: flex-start;
-                            gap: var(--spacing-md);
-                            margin-bottom: var(--spacing-md);
-                            padding: var(--spacing-md);
-                            background-color: var(--color-white);
-                            border-radius: var(--radius-lg);
-                            box-shadow: var(--shadow-sm);
-                            transition: var(--transition-normal);
-                            border-left: 4px solid var(--color-primary-dark);
+                        .recommendations__icon {
+                            width: 90px;
+                            height: 90px;
+                            object-fit: cover;
+                            margin-bottom: 15px;
+                            border-radius: 50%;
+                            border: 2px solid #ddd;
+                        }
 
-                            .timeline-item__content {
-                                p {
-                                    font-size: var(--font-size-sm);
-                                    color: var(--color-gray-600);
-                                }
-                            }
+                        p {
+                            font-size: 1em;
+                            color: #555;
+                            line-height: 1.6;
+                            margin-bottom: 10px;
+                            word-wrap: break-word;
+                            overflow-wrap: break-word;
+                        }
+                    }
+                }
+            }
+        }
 
-                            &:hover {
-                                transform: translateX(8px);
-                                box-shadow: var(--shadow-md);
-                            }
+        .legal {
+            padding: 50px 20px;
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+
+            .legal__container {
+                max-width: 1200px;
+                /* Added max-width for consistency */
+                margin: 0 auto;
+                /* Added margin for centering */
+
+                .legal__title {
+                    text-align: center;
+                    font-size: 2.5em;
+                    margin-bottom: 40px;
+                    color: #222;
+                }
+
+                .legal__grid {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    /* Default to 1 column for mobile */
+                    gap: 25px;
+                    padding: 0 15px;
+                    /* Added padding for mobile */
+                    /* Removed max-width and margin from here, handled by container */
+
+                    .legal__card {
+                        background-color: #fff;
+                        border-radius: 12px;
+                        padding: 25px;
+                        text-align: center;
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                        transition: transform 0.3s, box-shadow 0.3s;
+                        /* Added transition for hover effect */
+
+                        &:hover {
+                            /* Added hover effect for consistency */
+                            transform: translateY(-5px);
+                            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+                        }
+
+                        .legal__icon {
+                            width: 90px;
+                            height: 90px;
+                            object-fit: cover;
+                            margin-bottom: 15px;
+                            border-radius: 50%;
+                            border: 2px solid #ddd;
+                        }
+
+                        p {
+                            font-size: 1em;
+                            color: #555;
+                            line-height: 1.6;
+                            margin-bottom: 0;
+                            word-wrap: break-word;
+                            /* Ensure text wraps */
+                            overflow-wrap: break-word;
+                            /* Ensure text wraps */
                         }
                     }
                 }
@@ -436,7 +509,7 @@ body {
 }
 
 /* ========================================
-            MEDIA QUERIES
+            MEDIA QUERIES GLOBALES
 =========================================*/
 
 /* ========================================
@@ -612,19 +685,28 @@ body {
                     }
                 }
             }
+
+            .recommendations .recommendations__container .recommendations__grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .legal .legal__container .legal__grid {
+                /* Adjusted for tablet */
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
     }
 }
 
 /* ========================================
-            DESKTOP RESPONSIVE
+            DESKTOP RESPONSIVE (min-width: 1024px)
 ========================================*/
 @media (min-width: 1024px) {
     .portfolio {
         grid-template-areas:
-            "header"
-            "main"
-            "footer";
+            "header header"
+            "main main"
+            "footer footer";
 
         .header {
             display: flex;
@@ -656,74 +738,90 @@ body {
         }
     }
 
-    /* Ajustes específicos para las tarjetas de motocicletas en DESKTOP */
-    .main .models {
+    .main {
+        .models {
 
-        .motorcycle-card--sports,
-        .motorcycle-card--job {
-            display: grid;
-            grid-template-columns: 7fr 2fr;
-            gap: var(--spacing-xl);
-            align-items: start;
-            margin-bottom: var(--spacing-2xl);
-            padding: var(--spacing-lg);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            background-color: var(--color-white);
-        }
+            .motorcycle-card--sports,
+            .motorcycle-card--job {
+                display: grid;
+                grid-template-columns: 7fr 2fr;
+                gap: var(--spacing-xl);
+                align-items: start;
+                margin-bottom: var(--spacing-2xl);
+                padding: var(--spacing-lg);
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-md);
+                background-color: var(--color-white);
+            }
 
-        .motorcycle-card__image-content {
-            width: 100%;
-            height: auto;
-            min-width: 0;
-        }
+            .motorcycle-card__image-content {
+                width: 100%;
+                height: auto;
+                min-width: 0;
+            }
 
-        .motorcycle-card__content {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
-            min-width: 0;
-            align-items: center;
+            .motorcycle-card__content {
+                display: flex;
+                flex-direction: column;
+                gap: var(--spacing-md);
+                min-width: 0;
+                align-items: center;
 
-            .motorcycle-card__characteristics {
-                .motorcycle-card__characteristics-title {
-                    text-align: center;
-                    font-size: var(--font-size-xl);
+                .motorcycle-card__characteristics {
+                    .motorcycle-card__characteristics-title {
+                        text-align: center;
+                        font-size: var(--font-size-xl);
+                    }
+
+                    .motorcycle-card__characteristics-list {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        padding-left: 0;
+                        list-style-position: inside;
+                        margin-left: auto;
+                        margin-right: auto;
+                        text-align: left;
+                        max-width: fit-content;
+                    }
+
+                    .motorcycle-card__characteristics-item {
+                        margin: 0;
+                        line-height: 1.6;
+                        width: auto;
+                        max-width: 100%;
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                    }
                 }
 
-                .motorcycle-card__characteristics-list {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: flex-start;
-                    padding-left: 0;
-                    list-style-position: inside;
-                    margin-left: auto;
-                    margin-right: auto;
-                    text-align: left;
-                    max-width: fit-content;
-                }
-
-                .motorcycle-card__characteristics-item {
-                    margin: 0;
+                .motorcycle-card__description {
                     line-height: 1.6;
-                    width: auto;
-                    max-width: 100%;
+                    margin: 0;
+                    font-size: var(--font-size-base);
                     word-wrap: break-word;
                     overflow-wrap: break-word;
+                    text-align: left;
+                    max-width: fit-content;
+                    margin-left: auto;
+                    margin-right: auto;
                 }
             }
+        }
 
-            .motorcycle-card__description {
-                line-height: 1.6;
-                margin: 0;
-                font-size: var(--font-size-base);
-                word-wrap: break-word;
-                overflow-wrap: break-word;
-                text-align: left;
-                max-width: fit-content;
-                margin-left: auto;
-                margin-right: auto;
+        .recommendations {
+            .recommendations__container {
+                .recommendations__grid {
+                    grid-template-columns: repeat(4, 1fr);
+                    /* 4 columns for desktop */
+                }
             }
+        }
+
+        .legal .legal__container .legal__grid {
+            /* Adjusted for desktop */
+            grid-template-columns: repeat(3, 1fr);
+            /* Maintaining 3 columns for desktop */
         }
     }
 }
