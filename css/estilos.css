@@ -69,37 +69,27 @@
 }
 
 /* ====================================
-            Estilos CSS
+            Estilos CSS Base (para móvil y herencia)
 ======================================*/
-/* Elimina los espacios por defecto del navegador para tener control total del diseño. */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 
-Cuando alguien hace clic en un enlace que va a otra sección de la misma página, en lugar de "saltar" instantáneamente,la página se desliza suavemente hasta esa sección. 
-*/
 html {
     scroll-behavior: smooth;
     font-size: 16px;
 }
 
 body {
-    /* Tipografia */
     font-family: var(--font-primary);
-    /* Tamaño de letra */
     line-height: 1.6;
     color: var(--color-gray-800);
     background-color: var(--color-gray-100);
-    /* Evita que aparezca una barra de desplazamiento horizontal */
     overflow-x: hidden;
 }
 
-/* ==================================
-        CSS GRID para Movil
-====================================*/
 .portfolio {
     display: grid;
     min-height: 100vh;
@@ -110,52 +100,35 @@ body {
     grid-template-rows: 100px 1fr auto;
 
     /*============================
-            HEADER DESKTOP 
+            HEADER BASE
     =============================*/
-
     .header {
         grid-area: header;
-        /* Color marrón del fondo */
         background-color: var(--color-primary);
         box-shadow: var(--shadow-sm);
         position: sticky;
-        /*Se queda pegado arriba */
         top: 0;
-        /* Se mantiene sobre otros elementos */
         z-index: 1000;
-        /* Esta propiedad hace que cualquier cambio en el header sea suave y animado en lugar de instantáneo: */
         transition: var(--transition-normal);
 
         .header__container {
-            /* Limita el ancho máximo del contenedor header */
             max-width: 1280px;
-            /* height: auto; */
-            /* Centra horizontalmente el contenedor */
             margin: 0 auto;
-            /* Añade espacio interno a los lados 3rem q son 48px */
             padding: 0 var(--spacing-md);
             display: flex;
-            /* Añade espacio interno a los lados, el logo al lado izquierdo y el menu al lado derecho */
             justify-content: space-between;
-            /* Alinea verticalmente al centro todos los elementos, logo y menu centrados en la altura del header */
             align-items: center;
-            /* Define una altura fija para el header */
             height: 7rem;
 
-            /* LOGO DESKTOP - Círculo con logo */
             .header__logo {
                 width: 250px;
                 display: flex;
                 align-items: center;
-                /* Crea un espacio automático de 5px entre elementos */
                 gap: 5px;
-                /* Define el tamaño de fuente para el texto del logo */
                 font-size: var(--font-size-xl);
-                /* Hace el texto del logo muy grueso */
                 font-weight: 700;
 
                 a {
-
                     img {
                         width: 70px;
                         height: auto;
@@ -195,7 +168,6 @@ body {
                 }
             }
 
-            /* Menu movil */
             .header__menu-button {
                 display: block;
                 width: 2rem;
@@ -274,7 +246,6 @@ body {
         grid-area: main;
 
         .hero {
-            /* background-color: aqua; */
             color: white;
 
             .hero__container {
@@ -287,7 +258,6 @@ body {
                 }
 
                 .hero__content {
-                    /* background-color: aquamarine; */
                     width: 80%;
                     z-index: 3;
                     position: absolute;
@@ -312,122 +282,132 @@ body {
         .models {
             padding: var(--spacing-xl) var(--spacing-xl);
 
-            .models__container {
-                max-width: 1280px;
-                margin: 0 auto;
-                display: grid;
-                gap: var(--spacing-2xl);
-
-                .sports__header {
-                    .sports__category {
-                        .models__title {
-                            text-align: center;
-                            font-weight: bold;
-                        }
-                    }
-
-                    .motorcycle-card--sports {
-                        margin-bottom: 10px;
-
-                        .motorcycle-card__image-content {
-                            width: 400px;
-
-                            .motorcycle-card__name {
-                                text-align: center;
-                                margin-top: 20px;
-                            }
-
-                            .motorcycle-card__image {
-                                width: 100%;
-                            }
-                        }
-
-                        .motorcycle-card__content {
-                            .motorcycle-card__characteristics {
-                                .motorcycle-card__characteristics-title {
-                                    text-align: center;
-                                }
-
-                                .motorcycle-card__characteristics-list {
-                                    display: flex;
-                                    flex-direction: column;
-                                    align-items: start;
-
-                                    .motorcycle-card__characteristics-item {
-                                        margin: 0 60px;
-                                        line-height: 2.4;
-                                    }
-                                }
-                            }
-
-                            .motorcycle-card__description {
-                                line-height: 2.4;
-                            }
-                        }
-                    }
-                }
-            }
-
+            .models__container,
             .job__container {
                 max-width: 1280px;
                 margin: 0 auto;
                 display: grid;
+                /* Mantiene el grid para apilar las tarjetas si es necesario */
                 gap: var(--spacing-2xl);
-                padding: var(--spacing-xl) var(--spacing-xl);
+                padding: var(--spacing-xl);
+                /* Padding general para el contenedor */
+            }
 
-                .job__header {
-                    .job__category {
-                        .job__title {
-                            text-align: center;
-                            font-weight: bold;
-                        }
+            /* Estilos base para las tarjetas de motocicleta (móvil-first) */
+            .motorcycle-card--sports,
+            .motorcycle-card--job {
+                display: flex;
+                /* Cambiado a flex para control más fácil en móvil */
+                flex-direction: column;
+                /* Apila los elementos verticalmente */
+                align-items: center;
+                /* Centra la imagen y el texto */
+                margin-bottom: var(--spacing-2xl);
+                padding: var(--spacing-lg);
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-md);
+                background-color: var(--color-white);
+            }
+
+            .motorcycle-card__image-content {
+                width: 100%;
+                /* La imagen ocupará el 100% del ancho disponible en móvil */
+                height: auto;
+                /* Eliminado: width: 400px; y width: 350px; para permitir crecimiento */
+                min-width: 0;
+                /* Asegura que la columna de Grid se pueda encoger si es necesario */
+
+                .motorcycle-card__name {
+                    text-align: center;
+                    /* Centrado en móvil */
+                    margin-top: 0;
+                    margin-bottom: var(--spacing-sm);
+                    font-size: var(--font-size-2xl);
+                }
+
+                .motorcycle-card__image {
+                    width: 100%;
+                    height: auto;
+                    border-radius: var(--radius-md);
+                    object-fit: cover;
+                }
+            }
+
+            .motorcycle-card__content {
+                width: 100%;
+                /* Ocupa el 100% del ancho del padre en móvil */
+                display: flex;
+                flex-direction: column;
+                gap: var(--spacing-md);
+                min-width: 0;
+                /* MODIFICACIÓN CLAVE: Eliminado text-align: center para que los hijos directos puedan alinear su texto a la izquierda */
+                align-items: center;
+                /* Centra horizontalmente los ítems flex dentro de esta columna */
+
+                .motorcycle-card__characteristics {
+                    .motorcycle-card__characteristics-title {
+                        text-align: center;
+                        /* Centrado en móvil */
+                        font-size: var(--font-size-xl);
                     }
 
-                    .motorcycle-card--job {
-                        margin-bottom: 10px;
-
-                        .motorcycle-card__image-content {
-                            width: 350px;
-
-                            .motorcycle-card__name {
-                                text-align: center;
-                                margin-top: 20px;
-                            }
-
-                            .motorcycle-card__image {
-                                width: 100%;
-                            }
-                        }
-
-                        .motorcycle-card__content {
-                            .motorcycle-card__characteristics {
-                                .motorcycle-card__characteristics-title {
-                                    text-align: center;
-                                }
-
-                                .motorcycle-card__characteristics-list {
-                                    display: flex;
-                                    flex-direction: column;
-                                    align-items: start;
-
-                                    .motorcycle-card__characteristics-item {
-                                        margin: 0 60px;
-                                        line-height: 2.5;
-                                    }
-                                }
-                            }
-
-                            .motorcycle-card__description {
-                                line-height: 2.5;
-                            }
-                        }
+                    .motorcycle-card__characteristics-list {
+                        display: flex;
+                        flex-direction: column;
+                        /* Alinear los ítems de la lista a la izquierda */
+                        align-items: flex-start;
+                        /* Alinea los ítems a la izquierda */
+                        margin-left: auto;
+                        /* Centra el bloque de la lista */
+                        margin-right: auto;
+                        /* Centra el bloque de la lista */
+                        padding-left: 0;
+                        /* Elimina el padding-left que causaba sangría */
+                        list-style-position: inside;
+                        /* Asegura que los puntos de la lista estén dentro */
+                        list-style: disc;
+                        font-size: var(--font-size-base);
+                        /* Asegura que el texto dentro de la lista esté a la izquierda */
+                        text-align: left;
+                        /* Alinea el texto a la izquierda dentro de los ítems */
+                        max-width: fit-content;
+                        /* Permite que el bloque se ajuste a su contenido más largo */
                     }
+
+                    .motorcycle-card__characteristics-item {
+                        margin: 0;
+                        /* Elimina margin: 0 auto; para evitar el descuadre */
+                        line-height: 1.6;
+                        width: auto;
+                        max-width: 100%;
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                    }
+                }
+
+                .motorcycle-card__description {
+                    line-height: 1.6;
+                    margin: 0;
+                    font-size: var(--font-size-base);
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                    text-align: left;
+                    /* Asegura que la descripción esté a la izquierda */
+                    /* MODIFICACIÓN CLAVE: Cambiado a fit-content para que se alinee con la lista */
+                    max-width: fit-content;
+                    /* Permite que el bloque se ajuste a su contenido más largo */
+                    margin-left: auto;
+                    /* Centra el bloque de descripción */
+                    margin-right: auto;
+                    /* Centra el bloque de descripción */
                 }
             }
         }
 
         .recommendations {
-            padding: var(--spacing-sm) var(--spacing-xl);
+            /* Ajustado el padding superior para reducir el espacio */
+            padding: var(--spacing-md) var(--spacing-xl);
+            /* Reducido de --spacing-xl a --spacing-md */
 
             .recommendations__container {
                 max-width: 1280px;
@@ -442,7 +422,9 @@ body {
                     align-items: start;
 
                     .recommendations__timeline {
-                        margin: var(--spacing-xl) 0;
+                        /* Ajustado el margen superior para reducir el espacio */
+                        margin: var(--spacing-md) 0;
+                        /* Reducido de --spacing-xl a --spacing-md */
 
                         .recommendations__title {
                             font-size: var(--font-size-xl);
@@ -482,7 +464,6 @@ body {
                 }
             }
         }
-
     }
 }
 
@@ -491,7 +472,7 @@ body {
 =========================================*/
 
 /* ========================================
-   TABLET (hasta 768px)
+   TABLET (min-width: 768px)
 ========================================*/
 @media (min-width: 768px) {
     .portfolio {
@@ -502,7 +483,14 @@ body {
                 }
 
                 .nav {
+                    /* Asegura que el contenedor nav se comporte como un flexbox y justifique a la derecha */
+                    display: flex;
+                    justify-content: flex-end;
+                    /* Alinea los elementos a la derecha */
+                    align-items: center;
+                    /* Centra verticalmente los elementos */
                     position: static;
+                    /* Elimina la posición absoluta del móvil */
                     transform: none;
                     opacity: 1;
                     visibility: visible;
@@ -510,18 +498,179 @@ body {
                     background: transparent;
 
                     .nav__list {
-                        display: flex;
+                        list-style: none;
                         padding: 0;
                         gap: var(--spacing-lg);
+                        display: flex;
+                        /* Asegura que los ítems se muestren en línea */
+                        flex-direction: row;
+                        /* Importante para el layout horizontal */
 
                         .nav__item {
-                            border: none;
+                            border-bottom: none;
+                            /* Elimina el borde inferior que se aplica en móvil */
 
                             .nav__link {
+                                display: block;
                                 padding: var(--spacing-sm) var(--spacing-md);
                                 border-radius: var(--radius-3xl);
+                                text-decoration: none;
+                                color: var(--color-gray-800);
+                                transition: var(--transition-fast);
+
+                                &:hover,
+                                &.nav__link--active {
+                                    background-color: var(--color-gray-700);
+                                    color: var(--color-white);
+                                    transform: translateX(0);
+                                    /* Elimina la transformación de translateX de móvil */
+                                }
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        .main {
+            .hero {
+                .hero__container {
+
+                    img {
+                        height: 65vh;
+                        object-fit: cover;
+                        filter: brightness(0.6);
+                    }
+
+                    .hero__content {
+                        width: 70%;
+                        left: 15%;
+                        top: 20%;
+
+                        .hero__title {
+                            font-size: 45px;
+                            margin-bottom: 20px;
+                        }
+
+                        .hero__description {
+                            font-size: 23px;
+                            line-height: 1.6;
+                        }
+                    }
+
+                }
+            }
+
+            .models {
+
+                /* Aplicamos CSS Grid directamente a cada tarjeta de motocicleta para el diseño de 2 columnas */
+                .sports__category,
+                .job__category{
+                    padding: var(--spacing-md);
+                    text-align: center;
+                }
+                .motorcycle-card--sports,
+                .motorcycle-card--job {
+                    display: grid;
+                    /* Convierte la tarjeta en un contenedor grid */
+                    grid-template-columns: 6fr 3fr;
+                    /* Proporciones para tablet: imagen más grande */
+                    gap: var(--spacing-xl);
+                    align-items: start;
+                    margin-bottom: var(--spacing-2xl);
+                    padding: var(--spacing-lg);
+                    border-radius: var(--radius-lg);
+                    box-shadow: var(--shadow-md);
+                    background-color: var(--color-white);
+                }
+
+                .motorcycle-card__image-content {
+                    width: 100%;
+                    /* Asegura que ocupe todo el ancho de su columna de grid */
+                    height: auto;
+                    min-width: 0;
+
+                    .motorcycle-card__name {
+                        text-align: center;
+                        /* Alineación a la izquierda en tablet/desktop */
+                        margin-top: 0;
+                        margin-bottom: var(--spacing-sm);
+                        font-size: var(--font-size-2xl);
+                    }
+
+                    .motorcycle-card__image {
+                        width: 100%;
+                        height: auto;
+                        border-radius: var(--radius-md);
+                        object-fit: cover;
+                    }
+                }
+
+                .motorcycle-card__content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--spacing-md);
+                    min-width: 0;
+                    /* Centrar los elementos de la columna de contenido en tablet */
+                    align-items: center;
+                    /* Centra horizontalmente los ítems flex dentro de esta columna */
+                    /* MODIFICACIÓN CLAVE: Eliminado text-align: center para que los hijos directos puedan alinear su texto a la izquierda */
+                    /* text-align: center; */
+
+                    .motorcycle-card__characteristics {
+                        padding: var(--spacing-2xl);
+                        .motorcycle-card__characteristics-title {
+                            text-align: center;
+                            /* Centra el título de características en tablet */
+                            font-size: var(--font-size-xl);
+                            padding: var(--spacing-lg);
+                        }
+
+                        .motorcycle-card__characteristics-list {
+                            display: flex;
+                            flex-direction: column;
+                            /* Alinear los ítems de la lista a la izquierda */
+                            align-items: flex-start;
+                            /* Alinea los ítems a la izquierda */
+                            padding-left: 0;
+                            /* Elimina el padding-left que causaba sangría */
+                            list-style-position: inside;
+                            /* Asegura que los puntos de la lista estén dentro */
+                            margin-left: auto;
+                            /* Centra el bloque de la lista */
+                            margin-right: auto;
+                            /* Centra el bloque de la lista */
+                            text-align: left;
+                            /* Alinea el texto a la izquierda dentro de los ítems */
+                            max-width: fit-content;
+                            /* Permite que el bloque se ajuste a su contenido más largo */
+                        }
+
+                        .motorcycle-card__characteristics-item {
+                            margin: 0;
+                            /* Elimina margin: 0 auto; para evitar el descuadre */
+                            line-height: 1.6;
+                            width: auto;
+                            max-width: 100%;
+                            word-wrap: break-word;
+                            overflow-wrap: break-word;
+                        }
+                    }
+
+                    .motorcycle-card__description {
+                        line-height: 1.6;
+                        margin: 0;
+                        font-size: var(--font-size-base);
+                        word-wrap: break-word;
+                        overflow-wrap: break-word;
+                        text-align: left;
+                        /* Asegura que la descripción esté a la izquierda */
+                        max-width: fit-content;
+                        /* Permite que el bloque se ajuste a su contenido más largo */
+                        margin-left: auto;
+                        /* Centra el bloque de descripción */
+                        margin-right: auto;
+                        /* Centra el bloque de descripción */
                     }
                 }
             }
@@ -561,15 +710,111 @@ body {
                 }
 
                 .nav {
+                    /* Asegura que el contenedor nav se comporte como un flexbox y justifique a la derecha */
                     display: flex;
                     justify-content: flex-end;
+                    /* Alinea los elementos a la derecha */
                     align-items: center;
+                    /* Centra verticalmente los elementos */
+                    /* No se necesitan las propiedades de posición de móvil aquí */
                 }
             }
         }
     }
-}
 
+    /* Ajustes específicos para las tarjetas de motocicletas en DESKTOP */
+    .main .models {
+
+        .motorcycle-card--sports,
+        .motorcycle-card--job {
+            display: grid;
+            grid-template-columns: 7fr 2fr;
+            /* Proporciones para desktop: imagen aún más grande */
+            gap: var(--spacing-xl);
+            align-items: start;
+            margin-bottom: var(--spacing-2xl);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            background-color: var(--color-white);
+        }
+
+        .motorcycle-card__image-content {
+            width: 100%;
+            height: auto;
+            min-width: 0;
+        }
+
+        .motorcycle-card__content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            min-width: 0;
+            /* Centrar los elementos de la columna de contenido */
+            align-items: center;
+            /* Centra horizontalmente los ítems flex dentro de esta columna */
+            /* MODIFICACIÓN CLAVE: Eliminado text-align: center para que los hijos directos puedan alinear su texto a la izquierda */
+            /* text-align: center; */
+
+
+            .motorcycle-card__characteristics {
+                .motorcycle-card__characteristics-title {
+                    text-align: center;
+                    /* Centra el título de características */
+                    font-size: var(--font-size-xl);
+                }
+
+                .motorcycle-card__characteristics-list {
+                    /* Para centrar los ítems de lista individualmente, necesitamos anular el `align-items: start` y los `padding-left` */
+                    display: flex;
+                    /* Asegura que los ítems se mantengan en su propio flujo */
+                    flex-direction: column;
+                    /* Apila los ítems verticalmente */
+                    align-items: flex-start;
+                    /* Alinea los ítems a la izquierda */
+                    padding-left: 0;
+                    /* Elimina el padding-left que causaba sangría */
+                    list-style-position: inside;
+                    /* Asegura que los puntos de la lista estén dentro */
+                    margin-left: auto;
+                    /* Centra el bloque de la lista */
+                    margin-right: auto;
+                    /* Centra el bloque de la lista */
+                    text-align: left;
+                    /* Alinea el texto a la izquierda dentro de los ítems */
+                    max-width: fit-content;
+                    /* Permite que el bloque se ajuste a su contenido más largo */
+                }
+
+                .motorcycle-card__characteristics-item {
+                    margin: 0;
+                    /* Elimina margin: 0 auto; para evitar el descuadre */
+                    line-height: 1.6;
+                    width: auto;
+                    max-width: 100%;
+                    word-wrap: break-word;
+                    overflow-wrap: break-word;
+                }
+            }
+
+            .motorcycle-card__description {
+                line-height: 1.6;
+                margin: 0;
+                font-size: var(--font-size-base);
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+                text-align: left;
+                /* Asegura que la descripción esté a la izquierda */
+                max-width: fit-content;
+                /* MODIFICACIÓN CLAVE: Cambiado a fit-content para que se alinee con la lista */
+                margin-left: auto;
+                /* Centra el bloque de descripción */
+                margin-right: auto;
+                /* Centra el bloque de descripción */
+            }
+        }
+    }
+}
 /* ========================================
   ANIMACIONES GLOBALES ACTUALILZADOS
 ========================================*/
