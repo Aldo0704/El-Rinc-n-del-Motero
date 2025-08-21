@@ -280,97 +280,199 @@ body {
         }
 
         .models {
-            padding: var(--spacing-xl) var(--spacing-xl);
+            .models__container {
+                max-width: 1280px;
+                margin: 0 auto;
+                display: grid;
+                gap: var(--spacing-2xl);
+                padding: var(--spacing-xl);
 
-            .models__container,
+                .sports__header {
+                    .sports__category {
+                        text-align: center;
+                        padding: var(--spacing-lg);
+                    }
+
+                    .motorcycle-card--sports {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        margin-bottom: var(--spacing-2xl);
+                        padding: var(--spacing-lg);
+                        border-radius: var(--radius-lg);
+                        box-shadow: var(--shadow-md);
+                        background-color: var(--color-white);
+
+                        .motorcycle-card__image-content {
+                            width: 100%;
+                            height: auto;
+                            min-width: 0;
+
+                            .motorcycle-card__name {
+                                text-align: center;
+                                margin-top: 0;
+                                margin-bottom: var(--spacing-sm);
+                                font-size: var(--font-size-2xl);
+                            }
+
+                            .motorcycle-card__image {
+                                width: 100%;
+                                height: auto;
+                                border-radius: var(--radius-md);
+                                object-fit: cover;
+                            }
+                        }
+
+                        .motorcycle-card__content {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: var(--spacing-md);
+                            min-width: 0;
+                            align-items: center;
+
+                            .motorcycle-card__characteristics {
+                                .motorcycle-card__characteristics-title {
+                                    text-align: center;
+                                    font-size: var(--font-size-xl);
+                                }
+
+                                .motorcycle-card__characteristics-list {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    padding-left: 40px;
+                                    list-style-position: inside;
+                                    list-style: disc;
+                                    font-size: var(--font-size-base);
+                                    text-align: left;
+                                    max-width: fit-content;
+
+                                    .motorcycle-card__characteristics-item {
+                                        margin: 0;
+                                        line-height: 1.6;
+                                        width: auto;
+                                        max-width: 100%;
+                                        word-wrap: break-word;
+                                        overflow-wrap: break-word;
+                                    }
+                                }
+                            }
+
+                            .motorcycle-card__description {
+                                line-height: 1.6;
+                                margin: 0;
+                                font-size: var(--font-size-base);
+                                word-wrap: break-word;
+                                overflow-wrap: break-word;
+                                text-align: left;
+                                max-width: fit-content;
+                                margin-left: auto;
+                                margin-right: auto;
+                            }
+                        }
+                    }
+                }
+            }
+
+            padding: var(--spacing-sm);
+
             .job__container {
                 max-width: 1280px;
                 margin: 0 auto;
                 display: grid;
                 gap: var(--spacing-2xl);
                 padding: var(--spacing-xl);
-            }
 
-            .motorcycle-card--sports,
-            .motorcycle-card--job {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-bottom: var(--spacing-2xl);
-                padding: var(--spacing-lg);
-                border-radius: var(--radius-lg);
-                box-shadow: var(--shadow-md);
-                background-color: var(--color-white);
-            }
-
-            .motorcycle-card__image-content {
-                width: 100%;
-                height: auto;
-                min-width: 0;
-
-                .motorcycle-card__name {
-                    text-align: center;
-                    margin-top: 0;
-                    margin-bottom: var(--spacing-sm);
-                    font-size: var(--font-size-2xl);
-                }
-
-                .motorcycle-card__image {
-                    width: 100%;
-                    height: auto;
-                    border-radius: var(--radius-md);
-                    object-fit: cover;
-                }
-            }
-
-            .motorcycle-card__content {
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                gap: var(--spacing-md);
-                min-width: 0;
-                align-items: center;
-
-                .motorcycle-card__characteristics {
-                    .motorcycle-card__characteristics-title {
+                .job__header {
+                    .job__category {
                         text-align: center;
-                        font-size: var(--font-size-xl);
+                        padding: var(--spacing-lg);
                     }
 
-                    .motorcycle-card__characteristics-list {
+                    .motorcycle-card--job {
                         display: flex;
                         flex-direction: column;
-                        align-items: flex-start;
-                        margin-left: auto;
-                        margin-right: auto;
-                        padding-left: 0;
-                        list-style-position: inside;
-                        list-style: disc;
-                        font-size: var(--font-size-base);
-                        text-align: left;
-                        max-width: fit-content;
-                    }
+                        align-items: center;
+                        margin-bottom: var(--spacing-2xl);
+                        padding: var(--spacing-lg);
+                        border-radius: var(--radius-lg);
+                        box-shadow: var(--shadow-md);
+                        background-color: var(--color-white);
 
-                    .motorcycle-card__characteristics-item {
-                        margin: 0;
-                        line-height: 1.6;
-                        width: auto;
-                        max-width: 100%;
-                        word-wrap: break-word;
-                        overflow-wrap: break-word;
-                    }
-                }
+                        .motorcycle-card__image-content {
+                            width: 100%;
+                            height: auto;
+                            min-width: 0;
 
-                .motorcycle-card__description {
-                    line-height: 1.6;
-                    margin: 0;
-                    font-size: var(--font-size-base);
-                    word-wrap: break-word;
-                    overflow-wrap: break-word;
-                    text-align: left;
-                    max-width: fit-content;
-                    margin-left: auto;
-                    margin-right: auto;
+                            .motorcycle-card__name {
+                                text-align: center;
+                                margin-top: 0;
+                                margin-bottom: var(--spacing-sm);
+                                font-size: var(--font-size-2xl);
+                            }
+
+                            .motorcycle-card__image {
+                                width: 100%;
+                                height: auto;
+                                border-radius: var(--radius-md);
+                                object-fit: cover;
+                            }
+                        }
+
+                        .motorcycle-card__content {
+                            width: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            gap: var(--spacing-md);
+                            min-width: 0;
+                            align-items: center;
+
+                            .motorcycle-card__characteristics {
+                                .motorcycle-card__characteristics-title {
+                                    text-align: center;
+                                    font-size: var(--font-size-xl);
+                                }
+
+                                .motorcycle-card__characteristics-list {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: flex-start;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                    padding-left: 40px;
+                                    list-style-position: inside;
+                                    list-style: disc;
+                                    font-size: var(--font-size-base);
+                                    text-align: left;
+                                    max-width: fit-content;
+
+                                    .motorcycle-card__characteristics-item {
+                                        margin: 0;
+                                        line-height: 1.6;
+                                        width: auto;
+                                        max-width: 100%;
+                                        word-wrap: break-word;
+                                        overflow-wrap: break-word;
+                                    }
+                                }
+                            }
+
+                            .motorcycle-card__description {
+                                line-height: 1.6;
+                                margin: 0;
+                                font-size: var(--font-size-base);
+                                word-wrap: break-word;
+                                overflow-wrap: break-word;
+                                text-align: left;
+                                max-width: fit-content;
+                                margin-left: auto;
+                                margin-right: auto;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -386,20 +488,15 @@ body {
 
                 .recommendations__title {
                     text-align: center;
-                    font-size: 2.5em;
-                    /* Valor base para todos los tamaños */
                     margin-bottom: 40px;
-                    /* Valor base para todos los tamaños */
                     color: #222;
                 }
 
                 .recommendations__grid {
                     display: grid;
-                    /* Por defecto, una columna para móvil */
                     grid-template-columns: 1fr;
                     gap: 25px;
                     padding: 0 15px;
-                    /* Padding horizontal para móviles */
                     max-width: 1200px;
                     margin: 0 auto;
 
@@ -447,13 +544,10 @@ body {
 
             .legal__container {
                 max-width: 1200px;
-                /* Added max-width for consistency */
                 margin: 0 auto;
-                /* Added margin for centering */
 
                 .legal__title {
                     text-align: center;
-                    font-size: 2.5em;
                     margin-bottom: 40px;
                     color: #222;
                 }
@@ -461,11 +555,8 @@ body {
                 .legal__grid {
                     display: grid;
                     grid-template-columns: 1fr;
-                    /* Default to 1 column for mobile */
                     gap: 25px;
                     padding: 0 15px;
-                    /* Added padding for mobile */
-                    /* Removed max-width and margin from here, handled by container */
 
                     .legal__card {
                         background-color: #fff;
@@ -474,10 +565,8 @@ body {
                         text-align: center;
                         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
                         transition: transform 0.3s, box-shadow 0.3s;
-                        /* Added transition for hover effect */
 
                         &:hover {
-                            /* Added hover effect for consistency */
                             transform: translateY(-5px);
                             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
                         }
@@ -497,9 +586,7 @@ body {
                             line-height: 1.6;
                             margin-bottom: 0;
                             word-wrap: break-word;
-                            /* Ensure text wraps */
                             overflow-wrap: break-word;
-                            /* Ensure text wraps */
                         }
                     }
                 }
@@ -555,17 +642,15 @@ body {
     .footer {
         grid-area: footer;
         background-color: #333;
-        /* fondo oscuro */
         color: #fff;
-        /* texto blanco */
         padding: 40px 20px;
         text-align: center;
-        /* centra todo */
         font-family: Arial, sans-serif;
 
         .footer__title {
             font-size: 1.8em;
             margin-bottom: 15px;
+            padding: var(--spacing-sm);
         }
 
         .footer__container {
@@ -677,104 +762,217 @@ body {
             }
 
             .models {
-
-                .sports__category,
-                .job__category {
-                    padding: var(--spacing-md);
-                    text-align: center;
-                }
-
-                .motorcycle-card--sports,
-                .motorcycle-card--job {
-                    display: grid;
-                    grid-template-columns: 6fr 3fr;
-                    gap: var(--spacing-xl);
-                    align-items: start;
-                    margin-bottom: var(--spacing-2xl);
-                    padding: var(--spacing-lg);
-                    border-radius: var(--radius-lg);
-                    box-shadow: var(--shadow-md);
-                    background-color: var(--color-white);
-                }
-
-                .motorcycle-card__image-content {
-                    width: 100%;
-                    height: auto;
-                    min-width: 0;
-
-                    .motorcycle-card__name {
-                        text-align: center;
-                        margin-top: 0;
-                        margin-bottom: var(--spacing-sm);
-                        font-size: var(--font-size-2xl);
-                    }
-
-                    .motorcycle-card__image {
-                        width: 100%;
-                        height: auto;
-                        border-radius: var(--radius-md);
-                        object-fit: cover;
-                    }
-                }
-
-                .motorcycle-card__content {
-                    display: flex;
-                    flex-direction: column;
-                    gap: var(--spacing-md);
-                    min-width: 0;
-                    align-items: center;
-                    padding: var(--spacing-md);
-
-                    .motorcycle-card__characteristics {
-                        .motorcycle-card__characteristics-title {
+                .models__container {
+                    .sports__header {
+                        .sports__category {
                             text-align: center;
-                            font-size: var(--font-size-xl);
-                            padding: var(--spacing-xl);
+                            font-size: 1.5rem;
+                            margin-bottom: 40px;
+                            color: #222;
                         }
 
-                        .motorcycle-card__characteristics-list {
-                            display: flex;
-                            flex-direction: column;
-                            align-items: flex-start;
-                            padding-left: 0;
-                            list-style-position: inside;
-                            margin-left: auto;
-                            margin-right: auto;
-                            text-align: left;
-                            max-width: fit-content;
-                        }
+                        .motorcycle-card--sports {
+                            display: grid;
+                            grid-template-columns: 6fr 3fr;
+                            gap: var(--spacing-xl);
+                            align-items: start;
+                            margin-bottom: var(--spacing-2xl);
+                            padding: var(--spacing-lg);
+                            border-radius: var(--radius-lg);
+                            box-shadow: var(--shadow-md);
+                            background-color: var(--color-white);
 
-                        .motorcycle-card__characteristics-item {
-                            margin: 0;
-                            line-height: 1.6;
-                            width: auto;
-                            max-width: 100%;
-                            word-wrap: break-word;
-                            overflow-wrap: break-word;
+                            .motorcycle-card__image-content {
+                                width: 100%;
+                                height: auto;
+                                min-width: 0;
+
+                                .motorcycle-card__name {
+                                    text-align: center;
+                                    margin-top: 0;
+                                    margin-bottom: var(--spacing-sm);
+                                    font-size: var(--font-size-2xl);
+                                }
+
+                                .motorcycle-card__image {
+                                    width: 100%;
+                                    height: auto;
+                                    border-radius: var(--radius-md);
+                                    object-fit: cover;
+                                }
+                            }
+
+                            .motorcycle-card__content {
+                                display: flex;
+                                flex-direction: column;
+                                gap: var(--spacing-md);
+                                min-width: 0;
+                                align-items: center;
+                                padding: var(--spacing-md);
+
+                                .motorcycle-card__characteristics {
+                                    .motorcycle-card__characteristics-title {
+                                        text-align: center;
+                                        font-size: var(--font-size-xl);
+                                        padding: var(--spacing-xl);
+                                    }
+
+                                    .motorcycle-card__characteristics-list {
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: flex-start;
+                                        padding-left: 0;
+                                        list-style-position: inside;
+                                        margin-left: auto;
+                                        margin-right: auto;
+                                        text-align: left;
+                                        max-width: fit-content;
+
+                                        .motorcycle-card__characteristics-item {
+                                            margin: 0;
+                                            line-height: 1.6;
+                                            width: auto;
+                                            max-width: 100%;
+                                            word-wrap: break-word;
+                                            overflow-wrap: break-word;
+                                        }
+                                    }
+                                }
+
+                                .motorcycle-card__description {
+                                    line-height: 1.6;
+                                    margin: 0;
+                                    font-size: var(--font-size-base);
+                                    word-wrap: break-word;
+                                    overflow-wrap: break-word;
+                                    text-align: left;
+                                    max-width: fit-content;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                }
+                            }
                         }
                     }
+                }
 
-                    .motorcycle-card__description {
-                        line-height: 1.6;
-                        margin: 0;
-                        font-size: var(--font-size-base);
-                        word-wrap: break-word;
-                        overflow-wrap: break-word;
-                        text-align: left;
-                        max-width: fit-content;
-                        margin-left: auto;
-                        margin-right: auto;
+                .job__container {
+                    .job__header {
+                        .job__category {
+                            text-align: center;
+                            font-size: 1.5rem;
+                            margin-bottom: 40px;
+                            color: #222;
+                        }
+
+                        .motorcycle-card--job {
+                            display: grid;
+                            grid-template-columns: 6fr 3fr;
+                            gap: var(--spacing-xl);
+                            align-items: start;
+                            margin-bottom: var(--spacing-2xl);
+                            padding: var(--spacing-lg);
+                            border-radius: var(--radius-lg);
+                            box-shadow: var(--shadow-md);
+                            background-color: var(--color-white);
+
+                            .motorcycle-card__image-content {
+                                width: 100%;
+                                height: auto;
+                                min-width: 0;
+
+                                .motorcycle-card__name {
+                                    text-align: center;
+                                    margin-top: 0;
+                                    margin-bottom: var(--spacing-sm);
+                                    font-size: var(--font-size-2xl);
+                                }
+
+                                .motorcycle-card__image {
+                                    width: 100%;
+                                    height: auto;
+                                    border-radius: var(--radius-md);
+                                    object-fit: cover;
+                                }
+                            }
+
+                            .motorcycle-card__content {
+                                display: flex;
+                                flex-direction: column;
+                                gap: var(--spacing-md);
+                                min-width: 0;
+                                align-items: center;
+                                padding: var(--spacing-md);
+
+                                .motorcycle-card__characteristics {
+                                    .motorcycle-card__characteristics-title {
+                                        text-align: center;
+                                        font-size: var(--font-size-xl);
+                                        padding: var(--spacing-xl);
+                                    }
+
+                                    .motorcycle-card__characteristics-list {
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: flex-start;
+                                        padding-left: 0;
+                                        list-style-position: inside;
+                                        margin-left: auto;
+                                        margin-right: auto;
+                                        text-align: left;
+                                        max-width: fit-content;
+
+                                        .motorcycle-card__characteristics-item {
+                                            margin: 0;
+                                            line-height: 1.6;
+                                            width: auto;
+                                            max-width: 100%;
+                                            word-wrap: break-word;
+                                            overflow-wrap: break-word;
+                                        }
+                                    }
+                                }
+
+                                .motorcycle-card__description {
+                                    line-height: 1.6;
+                                    margin: 0;
+                                    font-size: var(--font-size-base);
+                                    word-wrap: break-word;
+                                    overflow-wrap: break-word;
+                                    text-align: left;
+                                    max-width: fit-content;
+                                    margin-left: auto;
+                                    margin-right: auto;
+                                }
+                            }
+                        }
                     }
                 }
             }
 
-            .recommendations .recommendations__container .recommendations__grid {
-                grid-template-columns: repeat(3, 1fr);
+            .recommendations {
+                .recommendations__container {
+                    .recommendations__title {
+                        text-align: center;
+                        font-size: 2rem;
+                        margin-bottom: 40px;
+                        color: #222;
+                    }
+                }
             }
 
-            .legal .legal__container .legal__grid {
-                /* Adjusted for tablet */
-                grid-template-columns: repeat(3, 1fr);
+            .legal {
+                .legal__container {
+                    .legal__title {
+                        text-align: center;
+                        font-size: 2rem;
+                        margin-bottom: 40px;
+                        color: #222;
+                    }
+
+                    .legal__grid {
+                        grid-template-columns: repeat(3, 1fr);
+                    }
+                }
             }
 
             .experiences {
@@ -787,9 +985,10 @@ body {
         }
 
         .footer {
-            .footer__title{
+            .footer__title {
                 padding: var(--spacing-md);
             }
+
             .footer__container {
                 max-width: 1280px;
                 margin: 0 auto;
@@ -817,7 +1016,7 @@ body {
 }
 
 /* ========================================
-            DESKTOP RESPONSIVE (min-width: 1024px)
+            DESKTOP RESPONSIVE 
 ========================================*/
 @media (min-width: 1024px) {
     .portfolio {
@@ -854,96 +1053,28 @@ body {
                 }
             }
         }
-    }
 
-    .main {
-        .models {
+        .main {
 
-            .motorcycle-card--sports,
-            .motorcycle-card--job {
-                display: grid;
-                grid-template-columns: 7fr 2fr;
-                gap: var(--spacing-xl);
-                align-items: start;
-                margin-bottom: var(--spacing-2xl);
-                padding: var(--spacing-lg);
-                border-radius: var(--radius-lg);
-                box-shadow: var(--shadow-md);
-                background-color: var(--color-white);
-            }
-
-            .motorcycle-card__image-content {
-                width: 100%;
-                height: auto;
-                min-width: 0;
-            }
-
-            .motorcycle-card__content {
-                display: flex;
-                flex-direction: column;
-                gap: var(--spacing-md);
-                min-width: 0;
-                align-items: center;
-
-                .motorcycle-card__characteristics {
-                    .motorcycle-card__characteristics-title {
-                        text-align: center;
-                        font-size: var(--font-size-xl);
-                    }
-
-                    .motorcycle-card__characteristics-list {
-                        display: flex;
-                        flex-direction: column;
-                        align-items: flex-start;
-                        padding-left: 0;
-                        list-style-position: inside;
-                        margin-left: auto;
-                        margin-right: auto;
-                        text-align: left;
-                        max-width: fit-content;
-                    }
-
-                    .motorcycle-card__characteristics-item {
-                        margin: 0;
-                        line-height: 1.6;
-                        width: auto;
-                        max-width: 100%;
-                        word-wrap: break-word;
-                        overflow-wrap: break-word;
+            .recommendations {
+                .recommendations__container {
+                    .recommendations__grid {
+                        grid-template-columns: repeat(4, 1fr);
                     }
                 }
+            }
 
-                .motorcycle-card__description {
-                    line-height: 1.6;
-                    margin: 0;
-                    font-size: var(--font-size-base);
-                    word-wrap: break-word;
-                    overflow-wrap: break-word;
-                    text-align: left;
-                    max-width: fit-content;
-                    margin-left: auto;
-                    margin-right: auto;
+            .legal {
+                .legal__container {
+                    .legal__grid {
+                        /* Adjusted for desktop */
+                        grid-template-columns: repeat(3, 1fr);
+                        /* Maintaining 3 columns for desktop */
+                    }
                 }
             }
-        }
-
-        .recommendations {
-            .recommendations__container {
-                .recommendations__grid {
-                    grid-template-columns: repeat(4, 1fr);
-                    /* 4 columns for desktop */
-                }
-            }
-        }
-
-        .legal .legal__container .legal__grid {
-            /* Adjusted for desktop */
-            grid-template-columns: repeat(3, 1fr);
-            /* Maintaining 3 columns for desktop */
         }
     }
 }
-
-/* ========================================
   ANIMACIONES GLOBALES ACTUALILZADOS
 ========================================*/
