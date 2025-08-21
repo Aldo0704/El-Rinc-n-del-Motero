@@ -377,8 +377,6 @@ body {
                 }
             }
 
-            padding: var(--spacing-sm);
-
             .job__container {
                 max-width: 1280px;
                 margin: 0 auto;
@@ -1067,14 +1065,10 @@ body {
             .legal {
                 .legal__container {
                     .legal__grid {
-                        /* Adjusted for desktop */
                         grid-template-columns: repeat(3, 1fr);
-                        /* Maintaining 3 columns for desktop */
                     }
                 }
             }
         }
     }
 }
-  ANIMACIONES GLOBALES ACTUALILZADOS
-========================================*/
